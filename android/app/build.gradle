@@ -44,7 +44,6 @@ def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
-
 android {
     compileSdkVersion flutterCompileSdkVersion.toInteger()
     ndkVersion flutter.ndkVersion
@@ -86,6 +85,11 @@ android {
            signingConfig signingConfigs.release
        }
    }
+    bundle {
+        storeArchive {
+            enable = false
+        }
+    }
 }
 
 flutter {
