@@ -79,8 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _longPressRecognizer = LongPressGestureRecognizer()
-      ..onLongPress = _handlePress;
+    _longPressRecognizer = LongPressGestureRecognizer()..onLongPress = _handlePress;
     _initSpeech();
   }
 
@@ -170,28 +169,25 @@ class _MyHomePageState extends State<MyHomePage> {
               child: _userWantsToScanQr
                   ? MobileScanner(
                       fit: BoxFit.fill,
-                      allowDuplicates: false,
-                      onDetect: (barcode, args) {
+                      onDetect: (barcodeCapture) {
                         setState(() {
                           _userWantsToScanQr = !_userWantsToScanQr;
                         });
-                        if (barcode.rawValue == null) {
+                        if (barcodeCapture.raw == null) {
                           debugPrint('Failed to scan Barcode');
                         } else {
-                          final String qrCodeData = barcode.rawValue!;
+                          final String qrCodeData = barcodeCapture.raw!;
                           if (Platform.isIOS) {
-                            return showDialog<void>(
+                            showDialog<void>(
                               context: context,
-                              barrierDismissible:
-                                  false, // user must tap button!
+                              barrierDismissible: false, // user must tap button!
                               builder: (BuildContext context) {
                                 return CupertinoAlertDialog(
                                   title: const Text('AlertDialog Title'),
                                   content: SingleChildScrollView(
                                     child: ListBody(
                                       children: <Widget>[
-                                        const Text(
-                                            'This is a demo alert dialog.'),
+                                        const Text('This is a demo alert dialog.'),
                                         Text(qrCodeData),
                                       ],
                                     ),
@@ -210,18 +206,16 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                             );
                           } else {
-                            return showDialog<void>(
+                            showDialog<void>(
                               context: context,
-                              barrierDismissible:
-                                  false, // user must tap button!
+                              barrierDismissible: false, // user must tap button!
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: const Text('AlertDialog Title'),
                                   content: SingleChildScrollView(
                                     child: ListBody(
                                       children: <Widget>[
-                                        const Text(
-                                            'This is a demo alert dialog.'),
+                                        const Text('This is a demo alert dialog.'),
                                         Text(qrCodeData),
                                       ],
                                     ),
@@ -287,9 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: IconButton(
                             iconSize: 300,
                             icon: Icon(
-                              _isListening
-                                  ? Icons.mic_outlined
-                                  : Icons.mic_none,
+                              _isListening ? Icons.mic_outlined : Icons.mic_none,
                             ),
                             color: MyTheme.secondaryColor,
                             // the method which is called
