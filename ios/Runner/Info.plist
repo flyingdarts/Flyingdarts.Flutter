@@ -30,6 +30,8 @@
 	<string>Can I use the camera please?</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Can I use the mic please?</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Uses speech recognition to allow you to say the score</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

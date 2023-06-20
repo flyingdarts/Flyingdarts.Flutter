@@ -42,6 +42,11 @@ dependencies:
     git:
       url: https://github.com/flyingdarts/speech_to_text.git
       path: speech_to_text
+  flutter_bloc:
+  bloc:
+  bloc_concurrency:
+  equatable:
+  provider:
 
 dev_dependencies:
   flutter_test:
