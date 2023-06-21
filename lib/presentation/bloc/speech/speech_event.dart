@@ -7,8 +7,8 @@ abstract class SpeechEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SpeechButtonLongPress extends SpeechEvent {
-  const SpeechButtonLongPress() : super();
+class SpeechButtonLongPressed extends SpeechEvent {
+  const SpeechButtonLongPressed() : super();
 }
 
 class SpeechButtonLongPressEnded extends SpeechEvent {
@@ -19,8 +19,8 @@ class SpeechButtonLongPressCancelled extends SpeechEvent {
   const SpeechButtonLongPressCancelled() : super();
 }
 
-class SpeechResultFound extends SpeechEvent {
-  const SpeechResultFound(this.result);
+class SpeechResultFoundEvent extends SpeechEvent {
+  const SpeechResultFoundEvent(this.result);
 
   final String result;
 
@@ -28,12 +28,12 @@ class SpeechResultFound extends SpeechEvent {
   List<Object> get props => [result];
 }
 
-class SpeechStartListening extends SpeechEvent {
-  const SpeechStartListening() : super();
+class SpeechStartListeningEvent extends SpeechEvent {
+  const SpeechStartListeningEvent() : super();
 }
 
-class SpeechStopListening extends SpeechEvent {
-  const SpeechStopListening() : super();
+class SpeechStopListeningEvent extends SpeechEvent {
+  const SpeechStopListeningEvent() : super();
 }
 
 class GetSpeechLanguages extends SpeechEvent {

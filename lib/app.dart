@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/presentation/bloc/speech_bloc.dart';
-import 'package:iyltdsu_voice/presentation/pages/speech_page.dart';
-import 'package:iyltdsu_voice/theme.dart';
+import 'package:iyltdsu_voice/presentation/bloc/camera/camera_bloc.dart';
+
+import 'presentation/bloc/speech/speech_bloc.dart';
+import 'presentation/pages/speech_page.dart';
+import 'theme.dart';
 
 /// App widget that wraps the flutter app.
 class SpeechApp extends StatelessWidget {
@@ -64,9 +66,11 @@ class SpeechApp extends StatelessWidget {
           ),
         ),
       ),
-      home: BlocProvider(
-        create: (ctx) =>
-            SpeechBloc()..init(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (ctx) => SpeechBloc()..init()),
+          BlocProvider(create: (ctx) => CameraBloc()),
+        ],
         child: const SpeechPage(),
       ),
     );

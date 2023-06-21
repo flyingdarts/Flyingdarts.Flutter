@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:provider/provider.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
@@ -15,12 +14,12 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
   SpeechBloc()
       : super(const SpeechState(
             isListening: false, lastEntry: "", enabled: true)) {
-    on<SpeechButtonLongPress>(_onSpeechButtonLongPressed);
+    on<SpeechButtonLongPressed>(_onSpeechButtonLongPressed);
     on<SpeechButtonLongPressEnded>(_onSpeechButtonLongPressEnded);
     on<SpeechButtonLongPressCancelled>(_onSpeechButtonLongPressCancelled);
-    on<SpeechStartListening>(_onSpeechStartListening);
-    on<SpeechStopListening>(_onSpeechStopListening);
-    on<SpeechResultFound>(_onSpeechResultFound);
+    on<SpeechStartListeningEvent>(_onSpeechStartListening);
+    on<SpeechStopListeningEvent>(_onSpeechStopListening);
+    on<SpeechResultFoundEvent>(_onSpeechResultFound);
     on<GetSpeechLanguages>(_onGetSpeechLanguages);
   }
   Future<void> init() async {
@@ -40,13 +39,13 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
   }
 
   Future<void> _onSpeechStartListening(
-    SpeechStartListening event,
+    SpeechStartListeningEvent event,
     Emitter<SpeechState> emit,
   ) async {
-    var block = this;
     var available = await _speechToText.initialize();
     if (available) {
       var locale = await _speechToText.systemLocale();
+      add(const GetSpeechLanguages());
       _speechToText.listen(
         onResult: (SpeechRecognitionResult result) {
           // Handle the speech recognition result
@@ -54,12 +53,14 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
           if (result.finalResult || result.hasConfidenceRating) {
             var lastEntry = result.recognizedWords;
             if (!_isValidEntry(lastEntry)) {
-              block.emit(state.copyWith(
+              // ignore: invalid_use_of_visible_for_testing_member
+              this.emit(state.copyWith(
                   lastEntry: "",
                   error: 'Failed validation: $lastEntry',
                   currentLanguage: locale?.name ?? ""));
             } else {
-              block.emit(state.copyWith(
+              // ignore: invalid_use_of_visible_for_testing_member
+              this.emit(state.copyWith(
                   lastEntry: lastEntry,
                   error: "Great success!",
                   currentLanguage: locale?.name ?? ""));
@@ -71,7 +72,7 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
   }
 
   Future<void> _onSpeechStopListening(
-    SpeechStopListening event,
+    SpeechStopListeningEvent event,
     Emitter<SpeechState> emit,
   ) async {
     if (state.isListening) {
@@ -84,21 +85,21 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
   }
 
   Future<void> _onSpeechResultFound(
-    SpeechResultFound event,
+    SpeechResultFoundEvent event,
     Emitter<SpeechState> emit,
   ) async {
     final result = state.lastEntry;
-
+    debugPrint("Got a result :tada:");
     emit(state.copyWith(
       lastEntry: result,
     ));
   }
 
   Future<void> _onSpeechButtonLongPressed(
-    SpeechButtonLongPress event,
+    SpeechButtonLongPressed event,
     Emitter<SpeechState> emit,
   ) async {
-    add(const SpeechStartListening());
+    add(const SpeechStartListeningEvent());
 
     const isListening = true;
 
@@ -111,14 +112,14 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
     SpeechButtonLongPressEnded event,
     Emitter<SpeechState> emit,
   ) async {
-    add(const SpeechStopListening());
+    add(const SpeechStopListeningEvent());
   }
 
   Future<void> _onSpeechButtonLongPressCancelled(
     SpeechButtonLongPressCancelled event,
     Emitter<SpeechState> emit,
   ) async {
-    add(const SpeechStopListening());
+    add(const SpeechStopListeningEvent());
   }
 
   bool _isValidEntry(String entry) {

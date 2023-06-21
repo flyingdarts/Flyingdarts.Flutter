@@ -4,8 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../theme.dart';
-import '../bloc/speech_bloc.dart';
+import '../bloc/camera/camera_bloc.dart';
+import '../bloc/speech/speech_bloc.dart';
 import '../dialogs/language_dialog.dart';
+import '../dialogs/scanner_dialog.dart';
 
 class SpeechPage extends StatelessWidget {
   const SpeechPage({super.key});
@@ -35,7 +37,16 @@ class SpeechPage extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            onPressed: () => {},
+            onPressed: () => showDialog<void>(
+              context: context,
+              builder: (dContext) => Provider<CameraBloc>(
+                  create: (_) => context.watch<CameraBloc>(),
+                  // we use `builder` to obtain a new `BuildContext` that has access to the provider
+                  builder: (context, child) {
+                    // No longer throws
+                    return const ScannerDialog();
+                  }),
+            ),
           ),
           IconButton(
             alignment: Alignment.center,
@@ -49,7 +60,8 @@ class SpeechPage extends StatelessWidget {
             ),
             onPressed: () => showDialog<void>(
               context: context,
-              builder: (dContext) => const LanguageDialog(),
+              builder: (dContext) => LanguageDialog(
+                  languages: context.read<SpeechBloc>().state.languages),
             ),
           )
         ],
@@ -110,7 +122,7 @@ class _SpeechState extends State<_Speech> {
               // long press confirmed
               // logger.i("onLongPress"),
               // _shouldStartListening(true),
-              context.read<SpeechBloc>().add(const SpeechButtonLongPress()),
+              context.read<SpeechBloc>().add(const SpeechButtonLongPressed()),
             },
             onLongPressEnd: (details) => {
               // same as longpressup

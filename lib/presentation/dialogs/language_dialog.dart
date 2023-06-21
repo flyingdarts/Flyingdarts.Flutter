@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/presentation/bloc/speech_bloc.dart';
-import 'package:iyltdsu_voice/theme.dart';
+
+import '../../theme.dart';
 
 /// Dialog of the game's statistics.
 class LanguageDialog extends StatelessWidget {
   /// Constructor
-  const LanguageDialog({Key? key}) : super(key: key);
+  final List<String> languages;
+  const LanguageDialog({Key? key,
+  required this.languages}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final languages = context.watch<SpeechBloc>().state.languages;
-
     return SimpleDialog(
       backgroundColor: MyTheme.primaryColor,
       contentPadding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 32.0),
