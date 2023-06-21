@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/presentation/bloc/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/pages/speech_page.dart';
-import 'package:iyltdsu_voice/speech_service.dart';
 import 'package:iyltdsu_voice/theme.dart';
 
 /// App widget that wraps the flutter app.
@@ -67,7 +66,7 @@ class SpeechApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (ctx) =>
-            SpeechBloc(ctx.read<SpeechService>()),
+            SpeechBloc()..init(),
         child: const SpeechPage(),
       ),
     );

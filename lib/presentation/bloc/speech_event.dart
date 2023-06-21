@@ -16,13 +16,26 @@ class SpeechButtonLongPressEnded extends SpeechEvent {
 }
 
 class SpeechButtonLongPressCancelled extends SpeechEvent {
-  const SpeechButtonLongPressCancelled({this.lastEntry = ""}) : super();
-
-  final String lastEntry;
+  const SpeechButtonLongPressCancelled() : super();
 }
 
 class SpeechResultFound extends SpeechEvent {
   const SpeechResultFound(this.result);
 
   final String result;
+
+  @override 
+  List<Object> get props => [result];
+}
+
+class SpeechStartListening extends SpeechEvent {
+  const SpeechStartListening() : super();
+}
+
+class SpeechStopListening extends SpeechEvent {
+  const SpeechStopListening() : super();
+}
+
+class GetSpeechLanguages extends SpeechEvent {
+  const GetSpeechLanguages() :super();
 }

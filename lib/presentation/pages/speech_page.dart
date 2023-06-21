@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/speech_service.dart';
 import 'package:provider/provider.dart';
 
 import '../../theme.dart';
 import '../bloc/speech_bloc.dart';
-import '../cubit/language_cubit.dart';
 import '../dialogs/language_dialog.dart';
 
 class SpeechPage extends StatelessWidget {
@@ -50,15 +48,9 @@ class SpeechPage extends StatelessWidget {
               ),
             ),
             onPressed: () => showDialog<void>(
-            context: context,
-            builder: (dContext) => BlocProvider(
-              create: (bContext) => LanguageCubit(
-                // TODO: Fetch the stats to display them.
-                context.read<SpeechService>(),
-              )..fetchLanguages(),
-              child: const LanguageDialog(),
+              context: context,
+              builder: (dContext) => const LanguageDialog(),
             ),
-          ),
           )
         ],
       ),
@@ -80,7 +72,6 @@ class _SpeechState extends State<_Speech> {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<SpeechBloc>().state;
-    final speechService = Provider.of<SpeechService>(context);
     return Container(
       width: double.infinity,
       child: Column(
@@ -88,7 +79,7 @@ class _SpeechState extends State<_Speech> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text(
-            speechService.lastEntry,
+            state.lastEntry,
             style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 72,
@@ -97,7 +88,7 @@ class _SpeechState extends State<_Speech> {
             ),
           ),
           Text(
-            speechService.error,
+            state.error,
             style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,
@@ -106,7 +97,7 @@ class _SpeechState extends State<_Speech> {
             ),
           ),
           Text(
-            speechService.currentLanguage,
+            state.currentLanguage,
             style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,

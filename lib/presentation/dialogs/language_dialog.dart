@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/presentation/cubit/language_cubit.dart';
+import 'package:iyltdsu_voice/presentation/bloc/speech_bloc.dart';
 import 'package:iyltdsu_voice/theme.dart';
 
 /// Dialog of the game's statistics.
@@ -10,7 +10,7 @@ class LanguageDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final languages = context.watch<LanguageCubit>().state.languages;
+    final languages = context.watch<SpeechBloc>().state.languages;
 
     return SimpleDialog(
       backgroundColor: MyTheme.primaryColor,
