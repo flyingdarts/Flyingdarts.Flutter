@@ -1,0 +1,44 @@
+name: "build and deploy widgetbook"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  Publish:
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Set up Flutter
+        uses: flutter/setup-flutter@v2
+        with:
+          flutter-version: "3.x.x"
+
+      - name: Install project dependencies
+        run: flutter pub get
+
+      - name: Run build_runner
+        run: dart run build_runner build
+
+      - name: Build Widgetbook
+        run: flutter build web -t lib/main.generator.dart -o build/widgetbook
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_GITHUB_OIDC_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload build files to S3
+        run: |
+          aws s3 sync build/widgetbook s3://${{ secrets.WIDGETBOOK_S3_BUCKET_NAME }} --delete
