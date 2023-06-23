@@ -1,7 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/presentation/bloc/speech/speech_bloc.dart';
-import 'package:iyltdsu_voice/presentation/bloc/speech/speech_bloc.mocks.dart';
 import 'package:test/test.dart';
 
 void main() {
