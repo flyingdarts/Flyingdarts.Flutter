@@ -27,6 +27,9 @@ jobs:
       - name: Run flutter doctor
         run: flutter doctor
 
+      - name: Install dependencies
+        run: flutter pub get
+
       - name: Run build_runner
         run: flutter pub run build_runner build
 
