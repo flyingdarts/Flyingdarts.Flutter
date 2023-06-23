@@ -24,6 +24,9 @@ jobs:
         with:
           flutter-version: "3.10.5"
 
+      - name: Run flutter doctor
+        run: flutter doctor
+
       - name: Run build_runner
         run: flutter pub run build_runner build
 
