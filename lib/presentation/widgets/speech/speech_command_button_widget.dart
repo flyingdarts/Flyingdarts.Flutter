@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 
 import '../../../theme.dart';
 import '../../bloc/speech/speech_bloc.dart';
@@ -10,8 +11,13 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The button with a microphone',
   type: SpeechCommandButton,
 )
-SpeechCommandButton defaultSpeechCommandButton(BuildContext context) {
-  return const SpeechCommandButton(state: SpeechState());
+Widget defaultSpeechCommandButton(BuildContext context) {
+  return createDefaultMaterialWidget(
+    context,
+    const SpeechCommandButton(
+      state: SpeechState(),
+    ),
+  );
 }
 
 class SpeechCommandButton extends StatelessWidget {
@@ -54,5 +60,3 @@ class SpeechCommandButton extends StatelessWidget {
     );
   }
 }
-
-

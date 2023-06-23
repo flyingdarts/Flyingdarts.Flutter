@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../theme.dart';
 
@@ -8,8 +9,14 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'An error dialog',
   type: ErrorDialog,
 )
-ErrorDialog defaultErrorDialog(BuildContext context) {
-  return const ErrorDialog(error: MobileScannerException(errorCode: MobileScannerErrorCode.genericError));
+Widget defaultErrorDialog(BuildContext context) {
+  return createDefaultMaterialWidget(
+    context,
+    const ErrorDialog(
+      error: MobileScannerException(
+          errorCode: MobileScannerErrorCode.genericError),
+    ),
+  );
 }
 
 class ErrorDialog extends StatelessWidget {

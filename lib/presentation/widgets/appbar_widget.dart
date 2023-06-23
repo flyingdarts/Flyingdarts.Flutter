@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
+import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 import 'package:provider/provider.dart';
 
 import '../bloc/camera/camera_bloc.dart';
@@ -13,8 +14,11 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The button to use in the AppBar',
   type: MyAppBar,
 )
-MyAppBar defaultMyAppBr(BuildContext context) {
-  return const MyAppBar();
+Widget defaultMyAppBr(BuildContext context) {
+  return createDefaultMaterialWidget(
+    context,
+    const MyAppBar(),
+  );
 }
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {

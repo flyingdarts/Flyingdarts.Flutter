@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
+import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 import 'package:provider/provider.dart';
 
 import '../bloc/speech/speech_bloc.dart';
@@ -15,14 +16,17 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: SpeechPage,
 )
 Widget defaultSpeechPage(BuildContext context) {
-  return Provider<SpeechBloc>(
+  return createDefaultMaterialWidget(
+    context,
+    Provider<SpeechBloc>(
       create: (_) => SpeechBloc()..init(),
       // we use `builder` to obtain a new `BuildContext` that has access to the provider
       builder: (context, child) {
         // No longer throws
         return const SpeechPage();
-      }
-    );
+      },
+    ),
+  );
 }
 
 class SpeechPage extends StatelessWidget {

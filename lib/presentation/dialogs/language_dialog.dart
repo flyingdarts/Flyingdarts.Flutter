@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 
 import '../../theme.dart';
 
@@ -8,15 +9,19 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'A language dialog',
   type: LanguageDialog,
 )
-LanguageDialog defaultLanguageDialog(BuildContext context) {
-  return const LanguageDialog(languages: ["English"]);
+Widget defaultLanguageDialog(BuildContext context) {
+  return createDefaultMaterialWidget(
+    context,
+    const LanguageDialog(
+      languages: ["English"],
+    ),
+  );
 }
 
 class LanguageDialog extends StatelessWidget {
   /// Constructor
   final List<String> languages;
-  const LanguageDialog({Key? key,
-  required this.languages}) : super(key: key);
+  const LanguageDialog({Key? key, required this.languages}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +71,8 @@ class LanguageDialog extends StatelessWidget {
                             (String item) => Column(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(left: 20, right: 20, top: 5),
+                                  padding: EdgeInsets.only(
+                                      left: 20, right: 20, top: 5),
                                   child: Text(item),
                                 ),
                               ],
