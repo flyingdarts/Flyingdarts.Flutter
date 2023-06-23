@@ -15,3 +15,7 @@ class CameraDetectedQrCode extends CameraEvent {
   @override 
   List<Object> get props => [scanResult];
 }
+
+class CameraLoadAvailableDevices extends CameraEvent {
+  const CameraLoadAvailableDevices(): super();
+}

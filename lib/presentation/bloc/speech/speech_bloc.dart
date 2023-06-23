@@ -5,11 +5,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:mockito/annotations.dart';
 
 part 'speech_state.dart';
 part 'speech_event.dart';
 
-/// Handles all logic related to the game.
+@GenerateNiceMocks([MockSpec<SpeechBloc>()])
+
+/// Handles all logic related to speech recognition feature.
 class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
   SpeechBloc()
       : super(const SpeechState(
@@ -46,25 +49,13 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
     if (available) {
       var locale = await _speechToText.systemLocale();
       add(const GetSpeechLanguages());
+      var bloc = this;
       _speechToText.listen(
         onResult: (SpeechRecognitionResult result) {
           // Handle the speech recognition result
           debugPrint(result.recognizedWords);
           if (result.finalResult || result.hasConfidenceRating) {
-            var lastEntry = result.recognizedWords;
-            if (!_isValidEntry(lastEntry)) {
-              // ignore: invalid_use_of_visible_for_testing_member
-              this.emit(state.copyWith(
-                  lastEntry: "",
-                  error: 'Failed validation: $lastEntry',
-                  currentLanguage: locale?.name ?? ""));
-            } else {
-              // ignore: invalid_use_of_visible_for_testing_member
-              this.emit(state.copyWith(
-                  lastEntry: lastEntry,
-                  error: "Great success!",
-                  currentLanguage: locale?.name ?? ""));
-            }
+            bloc.add(SpeechResultFoundEvent(result.recognizedWords));
           }
         },
       );
@@ -88,11 +79,19 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
     SpeechResultFoundEvent event,
     Emitter<SpeechState> emit,
   ) async {
-    final result = state.lastEntry;
-    debugPrint("Got a result :tada:");
-    emit(state.copyWith(
-      lastEntry: result,
-    ));
+    final result = event.result;
+    
+    if (_isValidEntry(result)) {
+      emit(state.copyWith(
+        lastEntry: result,
+        error: 'Great success!'
+      ));
+    } else {
+      emit(state.copyWith(
+        lastEntry: '',
+        error: 'Please try again!'
+      ));
+    }
   }
 
   Future<void> _onSpeechButtonLongPressed(

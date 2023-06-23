@@ -10,7 +10,7 @@ class SpeechState extends Equatable {
 
   const SpeechState({
     this.isListening = false,
-    this.lastEntry = "?",
+    this.lastEntry = "",
     this.enabled = true,
     this.error = "",
     this.currentLanguage = "",

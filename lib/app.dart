@@ -15,7 +15,6 @@ class SpeechApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flyingdarts',
       debugShowCheckedModeBanner: true,
       theme: ThemeData(
         primaryColor: MyTheme.secondaryColor,

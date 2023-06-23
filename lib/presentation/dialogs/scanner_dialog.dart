@@ -6,18 +6,18 @@ import '../../theme.dart';
 import '../bloc/camera/camera_bloc.dart';
 
 class ScannerDialog extends StatelessWidget {
-  const ScannerDialog({Key? key}) : super(key: key);
+  const ScannerDialog({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final scanResult = context.watch<CameraBloc>().state.scanResult;
-    final scanWindow = Rect.fromCenter(
-      center: MediaQuery.of(context).size.center(Offset.zero),
-      width: 200,
-      height: 200,
-    );
+    var scanController = MobileScannerController(autoStart: true);
+    final bloc = context.watch<CameraBloc>();
+    final scanResult = bloc.state.scanResult;
 
     return SimpleDialog(
+      key: const Key("QrCodeScannerDialog"),
       backgroundColor: MyTheme.primaryColor,
       contentPadding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 32.0),
       titlePadding: const EdgeInsets.all(24.0),
@@ -29,6 +29,7 @@ class ScannerDialog extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Align(
+            key: const Key("QrCodeScannerCloseDialog"),
             alignment: Alignment.topRight,
             child: InkWell(
               borderRadius: BorderRadius.circular(4),
@@ -55,8 +56,7 @@ class ScannerDialog extends StatelessWidget {
                   fit: StackFit.expand,
                   children: [
                     MobileScanner(
-                      fit: BoxFit.contain,
-                      scanWindow: scanWindow,
+                      controller: scanController,
                       errorBuilder: (context, error, child) {
                         String errorMessage;
                         switch (error.errorCode) {
@@ -73,10 +73,14 @@ class ScannerDialog extends StatelessWidget {
                         return Text(errorMessage);
                       },
                       onDetect: (capture) {
+                        debugPrint("Someting detected");
                         context
                             .read<CameraBloc>()
                             .add(CameraDetectedQrCode(capture));
+                        Navigator.pop(context);
                       },
+                      onScannerStarted: (x) => {debugPrint("Scanner started")},
+                      onStart: (x) => {debugPrint("Started")},
                     ),
                     Align(
                       alignment: Alignment.bottomCenter,

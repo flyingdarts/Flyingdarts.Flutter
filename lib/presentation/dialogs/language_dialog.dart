@@ -12,6 +12,7 @@ class LanguageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
+      key: const Key("LanguageDialog"),
       backgroundColor: MyTheme.primaryColor,
       contentPadding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 32.0),
       titlePadding: const EdgeInsets.all(24.0),
@@ -23,6 +24,7 @@ class LanguageDialog extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Align(
+            key: const Key("LanguageCloseDialog"),
             alignment: Alignment.topRight,
             child: InkWell(
               borderRadius: BorderRadius.circular(4),
