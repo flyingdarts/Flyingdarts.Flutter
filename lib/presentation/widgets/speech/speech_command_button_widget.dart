@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 
 import '../../../theme.dart';
-import '../../bloc/speech/speech_bloc.dart';
+import '../../../bloc/speech/speech_bloc.dart';
 import '../../gestures/speech_command_gesture_detector.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 

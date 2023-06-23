@@ -11,8 +11,8 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/presentation/bloc/camera/camera_bloc.dart';
-import 'package:iyltdsu_voice/presentation/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
+import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/error_dialog.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/language_dialog.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/scanner_dialog.dart';

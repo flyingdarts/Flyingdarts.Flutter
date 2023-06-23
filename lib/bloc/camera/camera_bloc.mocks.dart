@@ -6,7 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:bloc/bloc.dart' as _i5;
-import 'package:iyltdsu_voice/presentation/bloc/camera/camera_bloc.dart' as _i3;
+import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart' as _i3;
 import 'package:mobile_scanner/mobile_scanner.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 

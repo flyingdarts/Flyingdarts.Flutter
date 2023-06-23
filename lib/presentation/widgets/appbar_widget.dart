@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
+import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/presentation/dialogs/language_dialog.dart';
+import 'package:iyltdsu_voice/presentation/dialogs/scanner_dialog.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
 import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 import 'package:provider/provider.dart';
-
-import '../bloc/camera/camera_bloc.dart';
-import '../bloc/speech/speech_bloc.dart';
-import '../dialogs/language_dialog.dart';
-import '../dialogs/scanner_dialog.dart';
-
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(

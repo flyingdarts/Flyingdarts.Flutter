@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:iyltdsu_voice/main.dart';
-import 'package:iyltdsu_voice/presentation/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/gestures/speech_command_gesture_detector.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';

@@ -5,7 +5,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:provider/provider.dart';
 
 import '../../theme.dart';
-import '../bloc/camera/camera_bloc.dart';
+import '../../bloc/camera/camera_bloc.dart';
 
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 

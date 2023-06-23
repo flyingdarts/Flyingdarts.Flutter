@@ -6,7 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:bloc/bloc.dart' as _i4;
-import 'package:iyltdsu_voice/presentation/bloc/speech/speech_bloc.dart' as _i2;
+import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

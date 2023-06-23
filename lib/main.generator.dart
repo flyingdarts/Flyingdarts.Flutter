@@ -21,7 +21,25 @@ class WidgetbookApp extends StatelessWidget {
     return Widgetbook.material(
       // Use the generated directories variable
       directories: directories,
-      addons: [],
+      addons: [
+        TextScaleAddon(
+          scales: [1.0, 2.0],
+        ),
+        DeviceFrameAddon(
+          devices: [
+            Devices.ios.iPhoneSE,
+            Devices.ios.iPhone13,
+            Devices.ios.iPad,
+            Devices.ios.iPad12InchesGen4,
+            Devices.android.smallTablet,
+            Devices.android.mediumTablet,
+            Devices.android.largeTablet,
+            Devices.android.smallPhone,
+            Devices.android.onePlus8Pro,
+            Devices.android.samsungGalaxyS20
+          ],
+        ),
+      ],
       appBuilder: (context, child) {
         return child;
       },
