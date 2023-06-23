@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../theme.dart';
 
-/// Dialog of the game's statistics.
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'A language dialog',
+  type: LanguageDialog,
+)
+LanguageDialog defaultLanguageDialog(BuildContext context) {
+  return const LanguageDialog(languages: ["English"]);
+}
+
 class LanguageDialog extends StatelessWidget {
   /// Constructor
   final List<String> languages;

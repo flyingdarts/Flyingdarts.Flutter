@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'The button to use in the AppBar',
+  type: AppBarButton,
+)
+AppBarButton defaultAppBarButton(BuildContext context) {
+  return AppBarButton(iconData: Icons.abc, onPressed: () => {});
+}
+
 class AppBarButton extends StatelessWidget {
   const AppBarButton({super.key, required this.iconData, required this.onPressed});
 

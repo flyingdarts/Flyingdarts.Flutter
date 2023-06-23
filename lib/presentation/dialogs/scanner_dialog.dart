@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:provider/provider.dart';
 
 import '../../theme.dart';
 import '../bloc/camera/camera_bloc.dart';
 
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'A scanner dialog',
+  type: ScannerDialog,
+)
+Widget defaultScannerDialog(BuildContext context) {
+  return Provider<CameraBloc>(
+      create: (_) => CameraBloc(),
+      // we use `builder` to obtain a new `BuildContext` that has access to the provider
+      builder: (context, child) {
+        // No longer throws
+        return const ScannerDialog();
+      }
+    );
+}
+
 class ScannerDialog extends StatelessWidget {
-  const ScannerDialog({
-    super.key,
-  });
+  const ScannerDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

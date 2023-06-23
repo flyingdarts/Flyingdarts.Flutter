@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../bloc/speech/speech_bloc.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'The widget that displays the speech result',
+  type: SpeechCommandResult,
+)
+SpeechCommandResult defaultSpeechCommandResult(BuildContext context) {
+  return const SpeechCommandResult(state: SpeechState());
+}
 
 class SpeechCommandResult extends StatelessWidget {
   const SpeechCommandResult({

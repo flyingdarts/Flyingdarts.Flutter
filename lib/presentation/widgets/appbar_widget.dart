@@ -7,6 +7,16 @@ import '../bloc/speech/speech_bloc.dart';
 import '../dialogs/language_dialog.dart';
 import '../dialogs/scanner_dialog.dart';
 
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'The button to use in the AppBar',
+  type: MyAppBar,
+)
+MyAppBar defaultMyAppBr(BuildContext context) {
+  return const MyAppBar();
+}
+
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
     Key? key,

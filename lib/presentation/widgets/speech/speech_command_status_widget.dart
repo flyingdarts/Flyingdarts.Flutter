@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-
 import '../../bloc/speech/speech_bloc.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'The widget the displays the button status',
+  type: SpeechCommandStatus,
+)
+SpeechCommandStatus defaultSpeechCommandStatus(BuildContext context) {
+  return const SpeechCommandStatus(state: SpeechState());
+}
 
 class SpeechCommandStatus extends StatelessWidget {
   const SpeechCommandStatus({

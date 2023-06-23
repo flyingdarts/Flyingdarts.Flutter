@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import '../../theme.dart';
 
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(
+  name: 'An error dialog',
+  type: ErrorDialog,
+)
+ErrorDialog defaultErrorDialog(BuildContext context) {
+  return const ErrorDialog(error: MobileScannerException(errorCode: MobileScannerErrorCode.genericError));
+}
+
 class ErrorDialog extends StatelessWidget {
   const ErrorDialog({Key? key, required this.error}) : super(key: key);
 
