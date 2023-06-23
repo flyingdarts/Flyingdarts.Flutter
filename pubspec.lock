@@ -378,14 +378,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  go_router:
-    dependency: transitive
-    description:
-      name: go_router
-      sha256: "25ae21384b758eb80daff113fe8bfb785c2dd17b69fe4885008fe764b26fd1ca"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.1"
   graphs:
     dependency: transitive
     description:
@@ -623,6 +615,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  resizable_widget:
+    dependency: transitive
+    description:
+      name: resizable_widget
+      sha256: db2919754b93f386b9b3fb15e9f48f6c9d6d41f00a24397629133c99df86606a
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   shelf:
     dependency: transitive
     description:
@@ -857,10 +857,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: c42a3d414d19c008d90f0b6df669c18bb151c5f3012ed073498d96cf133e9caf
+      sha256: "4cded1846abba19aafe9fe9d0b643ddf83716e3b9a1e753058bb1336c5937c18"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "3.0.0-rc.2"
   widgetbook_annotation:
     dependency: "direct main"
     description:
@@ -877,14 +877,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0-rc.2"
-  widgetbook_models:
-    dependency: transitive
-    description:
-      name: widgetbook_models
-      sha256: "40899314ab0cce1a52b189ee12b79138ba59f445229f850fb326f579c8f63045"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.7"
   yaml:
     dependency: transitive
     description:
