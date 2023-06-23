@@ -19,19 +19,21 @@ jobs:
         with:
           node-version: 18
 
-      - name: Set up Flutter
-        uses: flutter/setup-flutter@v2
-        with:
-          flutter-version: "3.x.x"
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
 
       - name: Install project dependencies
-        run: flutter pub get
+        uses: steebchen/flutter@v1.1.0
+        with:
+          args: pub get
 
       - name: Run build_runner
         run: dart run build_runner build
 
       - name: Build Widgetbook
-        run: flutter build web -t lib/main.generator.dart -o build/widgetbook
+        uses: steebchen/flutter@v1.1.0
+        with:
+          args: build web -t lib/main.generator.dart -o build/widgetbook
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
