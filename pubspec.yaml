@@ -47,7 +47,9 @@ dependencies:
   bloc_concurrency:
   bloc_test:
   equatable:
-  provider:
+  provider: 
+  widgetbook_annotation: ^2.1.0
+  widgetbook: ^2.4.1
 
 
 dev_dependencies:
@@ -66,6 +68,7 @@ dev_dependencies:
   test:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+  widgetbook_generator: ^2.4.1
 
 # The following section is specific to Flutter packages.
 flutter:
