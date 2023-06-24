@@ -4,7 +4,60 @@ on:
     branches: [main]
   workflow_dispatch:
 jobs:
-  Publish:
+  run-unittests:
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Setup flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.10.5"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run State tests
+        run: flutter run test/bloc/speech_bloc_test.dart
+
+  run-widgettests:
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')"
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Setup flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.10.5"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run Widget tests
+        run: flutter run test/widgets/speech_page_widget_test.dart
+
+  publish:
+    needs: [run-unittests, run-widgettests]
     runs-on: ubuntu-22.04
     if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
     permissions:
