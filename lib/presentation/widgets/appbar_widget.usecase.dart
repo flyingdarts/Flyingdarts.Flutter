@@ -7,7 +7,7 @@ import 'package:iyltdsu_voice/utility/material.wrapper.dart';
   name: 'The button to use in the AppBar',
   type: MyAppBar,
 )
-Widget defaultMyAppBr(BuildContext context) {
+Widget defaultMyAppWidget(BuildContext context) {
   return createDefaultMaterialWidget(
     context,
     const MyAppBar(),

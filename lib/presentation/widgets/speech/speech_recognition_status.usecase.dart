@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The widget the displays the button status',
   type: SpeechRecognitionStatus,
 )
-Widget defaultSpeechCommandStatus(BuildContext context) {
+Widget defaultSpeechRecognitionStatusWidget(BuildContext context) {
   return createDefaultMaterialWidget(
     context,
     createDefaultWidgetInACard(

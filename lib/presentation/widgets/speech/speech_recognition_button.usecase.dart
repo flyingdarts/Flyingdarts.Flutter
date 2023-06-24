@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The button with a microphone',
   type: SpeechRecognitionButton,
 )
-Widget defaultSpeechCommandButton(BuildContext context) {
+Widget defaultSpeechRecogntionButtonWidget(BuildContext context) {
   return createDefaultWidgetInACard(
     context,
     const SpeechRecognitionButton(

@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The widget that displays the speech result',
   type: SpeechRecognitionResult,
 )
-Widget defaultSpeechCommandResult(BuildContext context) {
+Widget defaultSpeechRecognitionResultWidget(BuildContext context) {
   return createDefaultMaterialWidget(
     context,
     createDefaultWidgetInACard(

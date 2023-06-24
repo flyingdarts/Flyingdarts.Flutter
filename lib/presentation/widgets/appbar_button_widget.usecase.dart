@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   name: 'The button to use in the AppBar',
   type: AppBarButton,
 )
-Widget defaultAppBarButton(BuildContext context) {
+Widget defaultAppBarButtonWidget(BuildContext context) {
   return createDefaultMaterialWidget(
     context,
     AppBarButton(
