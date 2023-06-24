@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/utility/material.wrapper.dart';
+import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
+import 'package:iyltdsu_voice/theme.dart';
+import 'package:iyltdsu_voice/utility/material.wrappers.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:provider/provider.dart';
-
-import '../../theme.dart';
-import '../../bloc/camera/camera_bloc.dart';
 
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
