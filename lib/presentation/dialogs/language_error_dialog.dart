@@ -56,9 +56,13 @@ class LanguageErrorDialog extends ErrorDialog<String> {
           padding: EdgeInsets.only(bottom: 16),
           child: Icon(Icons.error, color: Colors.white),
         ),
-        Text(
-          error,
-          style: const TextStyle(color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            error,
+            style: const TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

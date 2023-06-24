@@ -76,13 +76,21 @@ class ScannerErrorDialog extends ErrorDialog<SpeechError> {
           padding: EdgeInsets.only(bottom: 16),
           child: Icon(Icons.error, color: Colors.white),
         ),
-        Text(
-          errorMessage,
-          style: const TextStyle(color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            errorMessage,
+            style: const TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
-        Text(
-          error.error.errorDetails?.message ?? '',
-          style: const TextStyle(color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            error.error.errorDetails?.message ?? '',
+            style: const TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

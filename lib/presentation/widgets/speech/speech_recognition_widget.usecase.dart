@@ -9,13 +9,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: SpeechRecognitionWidget,
 )
 Widget defaultSpeechRecognitionWidget(BuildContext context) {
-  return createDefaultMaterialWidget(
+  return createDefaultWidgetInACard(
     context,
-    createDefaultWidgetInACard(
-      context,
-      const SpeechRecognitionWidget(
-        state: SpeechState(isListening: true),
-      ),
+    const SpeechRecognitionWidget(
+      state: SpeechState(isListening: true),
     ),
   );
 }

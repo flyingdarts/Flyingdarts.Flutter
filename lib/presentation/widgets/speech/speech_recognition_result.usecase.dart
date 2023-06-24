@@ -9,16 +9,13 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: SpeechRecognitionResult,
 )
 Widget defaultSpeechRecognitionResultWidget(BuildContext context) {
-  return createDefaultMaterialWidget(
+  return createDefaultWidgetInACard(
     context,
-    createDefaultWidgetInACard(
-      context,
-      SpeechRecognitionResult(
-        state: SpeechState(
-          lastEntry: "12",
-          error: "Great success!",
-          currentLanguage: const Locale('nl', 'US').toString(),
-        ),
+    SpeechRecognitionResult(
+      state: SpeechState(
+        lastEntry: "12",
+        error: "Great success!",
+        currentLanguage: const Locale('nl', 'US').toString(),
       ),
     ),
   );
