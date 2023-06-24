@@ -1,27 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iyltdsu_voice/utility/material.wrapper.dart';
+import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/presentation/gestures/speech_command_gesture_detector.dart';
+import 'package:iyltdsu_voice/theme.dart';
 
-import '../../../theme.dart';
-import '../../../bloc/speech/speech_bloc.dart';
-import '../../gestures/speech_command_gesture_detector.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
-@widgetbook.UseCase(
-  name: 'The button with a microphone',
-  type: SpeechCommandButton,
-)
-Widget defaultSpeechCommandButton(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    const SpeechCommandButton(
-      state: SpeechState(),
-    ),
-  );
-}
-
-class SpeechCommandButton extends StatelessWidget {
-  const SpeechCommandButton({
+class SpeechRecognitionButton extends StatelessWidget {
+  const SpeechRecognitionButton({
     super.key,
     required this.state,
   });

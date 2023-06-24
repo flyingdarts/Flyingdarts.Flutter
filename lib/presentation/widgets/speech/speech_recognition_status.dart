@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
-import 'package:iyltdsu_voice/utility/material.wrapper.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-@widgetbook.UseCase(
-  name: 'The widget the displays the button status',
-  type: SpeechCommandStatus,
-)
-Widget defaultSpeechCommandStatus(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    const SpeechCommandStatus(
-      state: SpeechState(isListening: true),
-    ),
-  );
-}
-
-class SpeechCommandStatus extends StatelessWidget {
-  const SpeechCommandStatus({
+class SpeechRecognitionStatus extends StatelessWidget {
+  const SpeechRecognitionStatus({
     super.key,
     required this.state,
   });

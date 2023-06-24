@@ -7,9 +7,9 @@ import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/gestures/speech_command_gesture_detector.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_button_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_result_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_status_widget.dart';
+import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_button.dart';
+import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_result.dart';
+import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_status.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +45,7 @@ void main() {
     testWidgets('has a SpeechCommandResult widget', (tester) async {
       await tester.pumpWidget(const MyApp());
 
-      final buttonFinder = find.byType(SpeechCommandResult);
+      final buttonFinder = find.byType(SpeechRecognitionResult);
 
       expect(buttonFinder, findsOneWidget);
     });
@@ -53,7 +53,7 @@ void main() {
     testWidgets('has a SpeechCommandButton widget', (tester) async {
       await tester.pumpWidget(const MyApp());
 
-      final buttonFinder = find.byType(SpeechCommandButton);
+      final buttonFinder = find.byType(SpeechRecognitionButton);
 
       expect(buttonFinder, findsOneWidget);
     });
@@ -61,7 +61,7 @@ void main() {
     testWidgets('has a SpeechCommandStatus widget', (tester) async {
       await tester.pumpWidget(const MyApp());
 
-      final buttonFinder = find.byType(SpeechCommandStatus);
+      final buttonFinder = find.byType(SpeechRecognitionStatus);
 
       expect(buttonFinder, findsOneWidget);
     });
@@ -85,7 +85,7 @@ void main() {
       }
 
       group('SpeechCommandButton', () {
-        Widget widget = SpeechCommandButton(state: state);
+        Widget widget = SpeechRecognitionButton(state: state);
         testWidgets('has a SpeechCommandGestureDetector', (tester) async {
           await buildMaterialWidget(tester, widget);
 
@@ -104,7 +104,7 @@ void main() {
       });
 
       group('SpeechCommandResult', () {
-        Widget widget = SpeechCommandResult(state: state);
+        Widget widget = SpeechRecognitionResult(state: state);
         testWidgets('has three Text widgets', (tester) async {
           await buildMaterialWidget(tester, widget);
 
@@ -117,7 +117,7 @@ void main() {
       });
 
       group('SpeechCommandStatus', () {
-        Widget widget = SpeechCommandStatus(state: state);
+        Widget widget = SpeechRecognitionStatus(state: state);
         testWidgets('has one Text widget', (tester) async {
           await buildMaterialWidget(tester, widget);
 

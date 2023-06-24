@@ -1,27 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
-import 'package:iyltdsu_voice/utility/material.wrapper.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-@widgetbook.UseCase(
-  name: 'The widget that displays the speech result',
-  type: SpeechCommandResult,
-)
-Widget defaultSpeechCommandResult(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    SpeechCommandResult(
-      state: SpeechState(
-        lastEntry: "12",
-        error: "Great success!",
-        currentLanguage: const Locale('nl', 'US').toString(),
-      ),
-    ),
-  );
-}
-
-class SpeechCommandResult extends StatelessWidget {
-  const SpeechCommandResult({
+class SpeechRecognitionResult extends StatelessWidget {
+  const SpeechRecognitionResult({
     super.key,
     required this.state,
   });

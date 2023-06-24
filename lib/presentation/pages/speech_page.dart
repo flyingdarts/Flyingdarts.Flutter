@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_button_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_result_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_command_status_widget.dart';
+import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.dart';
 import 'package:iyltdsu_voice/utility/material.wrapper.dart';
-import 'package:provider/provider.dart';
-
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 import '../../bloc/camera/camera_bloc.dart';
@@ -41,15 +37,7 @@ class SpeechPage extends StatelessWidget {
       body: Container(
         alignment: Alignment.center,
         child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SpeechCommandResult(state: state),
-              SpeechCommandButton(state: state),
-              SpeechCommandStatus(state: state),
-            ],
-          ),
+          child: buildSpeechRecognitionWidget(context, state),
         ),
       ),
     );

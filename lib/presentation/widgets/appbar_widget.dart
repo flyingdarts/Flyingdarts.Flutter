@@ -4,20 +4,7 @@ import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/language_dialog.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/scanner_dialog.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
-import 'package:iyltdsu_voice/utility/material.wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
-@widgetbook.UseCase(
-  name: 'The button to use in the AppBar',
-  type: MyAppBar,
-)
-Widget defaultMyAppBr(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    const MyAppBar(),
-  );
-}
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
