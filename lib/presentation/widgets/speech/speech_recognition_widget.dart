@@ -5,17 +5,21 @@ import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_but
 import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_result.dart';
 
 Widget buildSpeechRecognitionWidget(BuildContext context, SpeechState state) {
-  return SpeechRecognitionWidget(state: state);
+  return SpeechRecognitionWidget(
+    state: state,
+  );
 }
 
 class SpeechRecognitionWidget extends StatelessWidget {
-  const SpeechRecognitionWidget({super.key, required this.state});
+  const SpeechRecognitionWidget({
+    super.key,
+    required this.state,
+  });
 
   final SpeechState state;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,9 +31,3 @@ class SpeechRecognitionWidget extends StatelessWidget {
     );
   }
 }
-
-// class SpeechWidgetBuilder<T, S> {
-//   T buildWidget(BuildContext, S state) {
-//     return 
-//   }
-// }

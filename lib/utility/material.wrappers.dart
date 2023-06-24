@@ -13,12 +13,12 @@ Widget createDefaultMaterialWidget(BuildContext context, Widget child) {
 Widget createDefaultWidgetInACard(BuildContext context, Widget child) {
   return Center(
     child: Container(
-      color: MyTheme.primaryColor,
       padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Card(
+            color: MyTheme.primaryColor,
             shadowColor: MyTheme.secondaryColor,
             child: child,
           ),

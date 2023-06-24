@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppBarButton extends StatelessWidget {
-  const AppBarButton(
-      {super.key, required this.iconData, required this.onPressed});
+  const AppBarButton({
+    super.key,
+    required this.iconData,
+    required this.onPressed,
+  });
 
   final IconData iconData;
   final VoidCallback onPressed;
