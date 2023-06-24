@@ -28,7 +28,7 @@ jobs:
         run: flutter pub get
 
       - name: Run State tests
-        run: flutter run test/bloc/speech_bloc_test.dart
+        run: flutter test test/bloc/speech_bloc_test.dart
 
   run-widgettests:
     runs-on: ubuntu-22.04
@@ -54,7 +54,7 @@ jobs:
         run: flutter pub get
 
       - name: Run Widget tests
-        run: flutter run test/widgets/speech_page_widget_test.dart
+        run: flutter test test/widgets/speech_page_widget_test.dart
 
   publish:
     needs: [run-unittests, run-widgettests]
