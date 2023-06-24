@@ -54,7 +54,7 @@ jobs:
         run: flutter pub get
 
       - name: Run Widget tests
-        run: flutter test test/widgets/speech_page_widget_test.dart
+        run: flutter test test/widget/speech_page_widget_test.dart
 
   publish:
     needs: [run-unittests, run-widgettests]
