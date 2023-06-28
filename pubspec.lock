@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "61.0.0"
+  alchemist:
+    dependency: "direct main"
+    description:
+      name: alchemist
+      sha256: "3b0b75fe77fcc022fe68c090571c2aff556c07779528653ffb9ecef450ad0c6e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.1"
   analyzer:
     dependency: transitive
     description:
@@ -491,10 +499,10 @@ packages:
     dependency: "direct main"
     description:
       name: mobile_scanner
-      sha256: da55204e5439bc8dc058df56231a7a1d513c6ec9cbad84492f56d493382d296f
+      sha256: "54dd914e1bb5758b3db7aa02e56d65d80285ba0705e0e5fa5cfbb11e27344c4b"
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.0"
+    version: "3.3.0"
   mockito:
     dependency: "direct dev"
     description:
@@ -713,10 +721,10 @@ packages:
     dependency: transitive
     description:
       name: speech_to_text_platform_interface
-      sha256: "13d90215a7554b9a8c1ce47c0a1739af8eacd2cf196ca66351e54dfd2172746d"
+      sha256: "2ef9c0abf3b4340998fcb489afc4fc8cd7574eff21d912673be59b60ff16850c"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.0"
   stack_trace:
     dependency: transitive
     description:
@@ -856,26 +864,23 @@ packages:
   widgetbook:
     dependency: "direct main"
     description:
-      name: widgetbook
-      sha256: "4cded1846abba19aafe9fe9d0b643ddf83716e3b9a1e753058bb1336c5937c18"
-      url: "https://pub.dev"
-    source: hosted
+      path: "dependencies/widgetbook/packages/widgetbook"
+      relative: true
+    source: path
     version: "3.0.0-rc.2"
   widgetbook_annotation:
     dependency: "direct main"
     description:
-      name: widgetbook_annotation
-      sha256: "3b7dbd3f326309845d023b586819b4aae7fbf5c8874cf1dfb92b303bb3ed96e4"
-      url: "https://pub.dev"
-    source: hosted
+      path: "dependencies/widgetbook/packages/widgetbook_annotation"
+      relative: true
+    source: path
     version: "3.0.0-rc.2"
   widgetbook_generator:
     dependency: "direct dev"
     description:
-      name: widgetbook_generator
-      sha256: "38694d74f3f683020e37bba7badd4c1f35d4d03d557ff03d0936806216c63a31"
-      url: "https://pub.dev"
-    source: hosted
+      path: "dependencies/widgetbook/packages/widgetbook_generator"
+      relative: true
+    source: path
     version: "3.0.0-rc.2"
   yaml:
     dependency: transitive
@@ -887,4 +892,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.0.0 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.4.0-34.1.pre"

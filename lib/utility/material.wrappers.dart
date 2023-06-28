@@ -10,7 +10,11 @@ Widget createDefaultMaterialWidget(BuildContext context, Widget child) {
   );
 }
 
-Widget createDefaultWidgetInACard(BuildContext context, Widget child) {
+Widget createDefaultWidgetInACard(BuildContext? context, Widget child) {
+  return createDefaultCardWidget(child);
+}
+
+Widget createDefaultCardWidget(Widget child) {
   return Center(
     child: Container(
       padding: const EdgeInsets.all(16.0),

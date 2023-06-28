@@ -39,6 +39,7 @@ class WidgetbookApp extends StatelessWidget {
             Devices.android.samsungGalaxyS20
           ],
         ),
+        HomeScreenAddon(isConfigured: true)
       ],
       appBuilder: (context, child) {
         return child;

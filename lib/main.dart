@@ -16,35 +16,3 @@ class MyApp extends StatelessWidget {
     return const SpeechApp();
   }
 }
-
-@widgetbook.UseCase(
-  name: 'Dashboard',
-  type: WidgetbookDashboard,
-)
-Widget defaultDashoard(BuildContext context) {
-  return const WidgetbookDashboard();
-}
-
-class WidgetbookDashboard extends StatelessWidget {
-  const WidgetbookDashboard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AppBarButton(
-          iconData: Icons.keyboard_command_key_rounded,
-          onPressed: () => {},
-        ),
-        AppBarButton(
-          iconData: Icons.access_alarm_outlined,
-          onPressed: () => {},
-        ),
-        AppBarButton(
-          iconData: Icons.g_translate_outlined,
-          onPressed: () => {},
-        ),
-      ],
-    );
-  }
-}

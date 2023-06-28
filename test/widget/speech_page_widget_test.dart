@@ -7,14 +7,12 @@ import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/gestures/speech_command_gesture_detector.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_button.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_result.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_status.dart';
+import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  group('SpeechPage', () {
-    testWidgets('has a title', (tester) async {
+  group('SpeechPage has', () {
+    testWidgets('a title', (tester) async {
       await tester.pumpWidget(const MyApp());
 
       const String expectedTitle = 'Flyingdarts';
@@ -23,15 +21,15 @@ void main() {
 
       expect(titleFinder, findsOneWidget);
     });
-    group('AppBar', () {
-      testWidgets('exists', (tester) async {
+    group('an AppBar', () {
+      testWidgets('that exists', (tester) async {
         await tester.pumpWidget(const MyApp());
 
         final appBarFinder = find.byType(MyAppBar);
 
         expect(appBarFinder, findsOneWidget);
       });
-      testWidgets('has 2 AppBarButtons', (tester) async {
+      testWidgets('that has 2 AppBarButtons', (tester) async {
         await tester.pumpWidget(const MyApp());
 
         const int expectedNumberOfButtons = 2;
@@ -42,90 +40,12 @@ void main() {
       });
     });
 
-    testWidgets('has a SpeechCommandResult widget', (tester) async {
+    testWidgets('a speech recognition widget', (tester) async {
       await tester.pumpWidget(const MyApp());
 
-      final buttonFinder = find.byType(SpeechRecognitionResult);
+      final widgetFinder = find.byType(SpeechRecognitionWidget);
 
-      expect(buttonFinder, findsOneWidget);
-    });
-
-    testWidgets('has a SpeechCommandButton widget', (tester) async {
-      await tester.pumpWidget(const MyApp());
-
-      final buttonFinder = find.byType(SpeechRecognitionButton);
-
-      expect(buttonFinder, findsOneWidget);
-    });
-
-    testWidgets('has a SpeechCommandStatus widget', (tester) async {
-      await tester.pumpWidget(const MyApp());
-
-      final buttonFinder = find.byType(SpeechRecognitionStatus);
-
-      expect(buttonFinder, findsOneWidget);
-    });
-
-    group('widget', () {
-      SpeechState state = const SpeechState();
-
-      Future<void> buildMaterialWidget(
-        WidgetTester widgetTester,
-        Widget widget,
-      ) async {
-        await widgetTester.pumpWidget(
-          MaterialApp(
-            home: Scaffold(
-              body: Material(
-                child: widget,
-              ),
-            ),
-          ),
-        );
-      }
-
-      group('SpeechCommandButton', () {
-        Widget widget = SpeechRecognitionButton(state: state);
-        testWidgets('has a SpeechCommandGestureDetector', (tester) async {
-          await buildMaterialWidget(tester, widget);
-
-          final gestureFinder = find.byType(SpeechCommandGestureDetector);
-
-          expect(gestureFinder, findsOneWidget);
-        });
-
-        testWidgets('has an Icon widget', (tester) async {
-          await buildMaterialWidget(tester, widget);
-
-          final gestureFinder = find.byType(Icon);
-
-          expect(gestureFinder, findsOneWidget);
-        });
-      });
-
-      group('SpeechCommandResult', () {
-        Widget widget = SpeechRecognitionResult(state: state);
-        testWidgets('has three Text widgets', (tester) async {
-          await buildMaterialWidget(tester, widget);
-
-          const int numberOfExpectedTextFields = 3;
-
-          final gestureFinder = find.byType(Text);
-
-          expect(gestureFinder, findsNWidgets(numberOfExpectedTextFields));
-        });
-      });
-
-      group('SpeechCommandStatus', () {
-        Widget widget = SpeechRecognitionStatus(state: state);
-        testWidgets('has one Text widget', (tester) async {
-          await buildMaterialWidget(tester, widget);
-
-          final gestureFinder = find.byType(Text);
-
-          expect(gestureFinder, findsOneWidget);
-        });
-      });
+      expect(widgetFinder, findsOneWidget);
     });
   });
 }
