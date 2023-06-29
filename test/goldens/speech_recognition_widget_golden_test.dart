@@ -1,5 +1,6 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
+import 'package:iyltdsu_voice/bloc/language/language_state.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.usecase.dart';
@@ -17,12 +18,15 @@ void main() {
           name: 'Initial state.',
           constraints: const BoxConstraints(maxWidth: 430), // (4)
           child: createDefaultCardWidget(
-            const SpeechRecognitionWidget(
-              state: SpeechState(
+            SpeechRecognitionWidget(
+              state: const SpeechState(
                 isListening: false,
-                currentLanguage: 'Nederlands (Verenigde Staten)',
                 error: '',
                 lastEntry: '',
+              ),
+              languageState: LanguageState(
+                'Nederlands (Verenigde Staten)',
+                [],
               ),
             ),
           ),
@@ -31,12 +35,15 @@ void main() {
           name: 'While listening.',
           constraints: const BoxConstraints(maxWidth: 430), // (4)
           child: createDefaultCardWidget(
-            const SpeechRecognitionWidget(
-              state: SpeechState(
-                isListening: true,
-                currentLanguage: 'Nederlands (Verenigde Staten)',
+            SpeechRecognitionWidget(
+              state: const SpeechState(
+                isListening: false,
                 error: '',
                 lastEntry: '',
+              ),
+              languageState: LanguageState(
+                'Nederlands (Verenigde Staten)',
+                [],
               ),
             ),
           ),
@@ -45,12 +52,15 @@ void main() {
           name: 'When a good result has been found.',
           constraints: const BoxConstraints(maxWidth: 430), // (4)
           child: createDefaultCardWidget(
-            const SpeechRecognitionWidget(
-              state: SpeechState(
+            SpeechRecognitionWidget(
+              state: const SpeechState(
                 isListening: false,
-                currentLanguage: "Nederlands (Verenigde Staten)",
-                error: 'Great success!',
-                lastEntry: "103",
+                error: '',
+                lastEntry: '',
+              ),
+              languageState: LanguageState(
+                'Nederlands (Verenigde Staten)',
+                [],
               ),
             ),
           ),
@@ -59,12 +69,15 @@ void main() {
           name: 'When a bad result has been found.',
           constraints: const BoxConstraints(maxWidth: 430), // (4)
           child: createDefaultCardWidget(
-            const SpeechRecognitionWidget(
-              state: SpeechState(
+            SpeechRecognitionWidget(
+              state: const SpeechState(
                 isListening: false,
-                currentLanguage: 'Nederlands (Verenigde Staten)',
-                error: 'Please try again!',
+                error: '',
                 lastEntry: '',
+              ),
+              languageState: LanguageState(
+                'Nederlands (Verenigde Staten)',
+                [],
               ),
             ),
           ),
