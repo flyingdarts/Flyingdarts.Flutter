@@ -5,27 +5,21 @@ class SpeechState extends Equatable {
   final String lastEntry;
   final bool enabled;
   final String error;
-  final String currentLanguage;
-  final List<String> languages;
 
   const SpeechState({
     this.isListening = false,
     this.lastEntry = "",
     this.enabled = true,
     this.error = "",
-    this.currentLanguage = "",
-    this.languages = const []
   });
 
   @override
   List<Object> get props => [
-    isListening,
-    lastEntry,
-    enabled,
-    error,
-    currentLanguage,
-    languages
-  ];
+        isListening,
+        lastEntry,
+        enabled,
+        error,
+      ];
 
   SpeechState copyWith({
     bool? isListening,
@@ -40,7 +34,5 @@ class SpeechState extends Equatable {
         lastEntry: lastEntry ?? this.lastEntry,
         enabled: enabled ?? this.enabled,
         error: error ?? this.error,
-        currentLanguage: currentLanguage ?? this.currentLanguage,
-        languages: languages ?? this.languages,
       );
 }

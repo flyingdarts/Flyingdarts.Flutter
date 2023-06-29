@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iyltdsu_voice/bloc/language/language_state.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/gestures/speech_command_gesture_detector.dart';
 import 'package:iyltdsu_voice/theme.dart';
 
-Widget buildSpeechRecognitionWidget(BuildContext context, SpeechState state) {
+Widget buildSpeechRecognitionWidget(
+  BuildContext context,
+  SpeechState state,
+  LanguageState languageState,
+) {
   return SpeechRecognitionWidget(
     state: state,
+    languageState: languageState,
   );
 }
 
@@ -14,9 +20,11 @@ class SpeechRecognitionWidget extends StatelessWidget {
   const SpeechRecognitionWidget({
     super.key,
     required this.state,
+    required this.languageState,
   });
 
   final SpeechState state;
+  final LanguageState languageState;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,7 @@ class SpeechRecognitionWidget extends StatelessWidget {
               ),
             ),
             Text(
-              state.currentLanguage,
+              languageState.currentLanguage,
               style: const TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 14,
@@ -65,16 +73,8 @@ class SpeechRecognitionWidget extends StatelessWidget {
               onLongPress: () => {
                 context.read<SpeechBloc>().add(const SpeechButtonLongPressed()),
               },
-              onLongPressEnd: (details) => {
-                context
-                    .read<SpeechBloc>()
-                    .add(const SpeechButtonLongPressEnded())
-              },
-              onLongPressCancel: () => {
-                context
-                    .read<SpeechBloc>()
-                    .add(const SpeechButtonLongPressCancelled())
-              },
+              onLongPressEnd: (details) => {context.read<SpeechBloc>().add(const SpeechButtonLongPressEnded())},
+              onLongPressCancel: () => {context.read<SpeechBloc>().add(const SpeechButtonLongPressCancelled())},
               child: IconButton(
                 iconSize: 300,
                 icon: Icon(
