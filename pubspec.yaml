@@ -17,7 +17,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.2.0+1
+version: 1.2.1+1
 
 environment:
   sdk: ">=2.18.2 <3.0.0"
@@ -50,13 +50,13 @@ dependencies:
   provider:
   widgetbook_annotation:
     path: ./dependencies/widgetbook/packages/widgetbook_annotation
-    # git: 
+    # git:
     #   url: https://github.com/mikepattyn/widgetbook.git
     #   path: packages/widgetbook_annotation
 
   widgetbook:
     path: ./dependencies/widgetbook/packages/widgetbook
-    # git: 
+    # git:
     #   url: https://github.com/mikepattyn/widgetbook.git
     #   path: packages/widgetbook
 
@@ -76,11 +76,11 @@ dev_dependencies:
   mockito:
   build_runner:
   test:
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-  widgetbook_generator: 
+  # For information on the generic Dart part of this file, see the
+  # following page: https://dart.dev/tools/pub/pubspec
+  widgetbook_generator:
     path: ./dependencies/widgetbook/packages/widgetbook_generator
-    # git: 
+    # git:
     #   url: https://github.com/mikepattyn/widgetbook.git
     #   path: packages/widgetbook_generator
 # The following section is specific to Flutter packages.
