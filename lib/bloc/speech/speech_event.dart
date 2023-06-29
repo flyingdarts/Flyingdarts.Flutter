@@ -24,7 +24,7 @@ class SpeechResultFoundEvent extends SpeechEvent {
 
   final String result;
 
-  @override 
+  @override
   List<Object> get props => [result];
 }
 
@@ -34,8 +34,4 @@ class SpeechStartListeningEvent extends SpeechEvent {
 
 class SpeechStopListeningEvent extends SpeechEvent {
   const SpeechStopListeningEvent() : super();
-}
-
-class GetSpeechLanguages extends SpeechEvent {
-  const GetSpeechLanguages() :super();
 }

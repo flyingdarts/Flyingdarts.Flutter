@@ -14,16 +14,13 @@ part 'speech_event.dart';
 
 /// Handles all logic related to speech recognition feature.
 class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
-  SpeechBloc()
-      : super(const SpeechState(
-            isListening: false, lastEntry: "", enabled: true)) {
+  SpeechBloc() : super(const SpeechState(isListening: false, lastEntry: "", enabled: true)) {
     on<SpeechButtonLongPressed>(_onSpeechButtonLongPressed);
     on<SpeechButtonLongPressEnded>(_onSpeechButtonLongPressEnded);
     on<SpeechButtonLongPressCancelled>(_onSpeechButtonLongPressCancelled);
     on<SpeechStartListeningEvent>(_onSpeechStartListening);
     on<SpeechStopListeningEvent>(_onSpeechStopListening);
     on<SpeechResultFoundEvent>(_onSpeechResultFound);
-    on<GetSpeechLanguages>(_onGetSpeechLanguages);
   }
   Future<void> init() async {
     _speechToText = SpeechToText();
@@ -31,24 +28,12 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
 
   late SpeechToText _speechToText;
 
-  Future<void> _onGetSpeechLanguages(
-    GetSpeechLanguages event,
-    Emitter<SpeechState> emit,
-  ) async {
-    final locales = await _speechToText.locales();
-    final languages = locales.map((e) => e.name).toList();
-
-    emit(state.copyWith(languages: languages));
-  }
-
   Future<void> _onSpeechStartListening(
     SpeechStartListeningEvent event,
     Emitter<SpeechState> emit,
   ) async {
     var available = await _speechToText.initialize();
     if (available) {
-      var locale = await _speechToText.systemLocale();
-      add(const GetSpeechLanguages());
       var bloc = this;
       _speechToText.listen(
         onResult: (SpeechRecognitionResult result) {
@@ -80,17 +65,11 @@ class SpeechBloc extends Bloc<SpeechEvent, SpeechState> {
     Emitter<SpeechState> emit,
   ) async {
     final result = event.result;
-    
+
     if (_isValidEntry(result)) {
-      emit(state.copyWith(
-        lastEntry: result,
-        error: 'Great success!'
-      ));
+      emit(state.copyWith(lastEntry: result, error: 'Great success!'));
     } else {
-      emit(state.copyWith(
-        lastEntry: '',
-        error: 'Please try again!'
-      ));
+      emit(state.copyWith(lastEntry: '', error: 'Please try again!'));
     }
   }
 

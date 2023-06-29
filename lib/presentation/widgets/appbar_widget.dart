@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
-import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/language_dialog.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/scanner_dialog.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
@@ -47,7 +47,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             showDialog<void>(
               context: context,
               builder: (dContext) => LanguageDialog(
-                languages: context.read<SpeechBloc>().state.languages,
+                languages: context.read<LanguageCubit>().state.availableLanguages,
               ),
             )
           },

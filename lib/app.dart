@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
+import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
 import 'package:iyltdsu_voice/presentation/pages/speech_page.dart';
 import 'theme.dart';
@@ -65,10 +66,7 @@ class SpeechApp extends StatelessWidget {
         ),
       ),
       home: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (ctx) => SpeechBloc()..init()),
-          BlocProvider(create: (ctx) => CameraBloc()),
-        ],
+        providers: [BlocProvider(create: (ctx) => SpeechBloc()..init()), BlocProvider(create: (ctx) => CameraBloc()), BlocProvider(create: (ctx) => LanguageCubit()..init())],
         child: const SpeechPage(),
       ),
     );

@@ -19,7 +19,6 @@ Widget defaultLanguageDialog(BuildContext context) {
 }
 
 class LanguageDialog extends StatelessWidget {
-  /// Constructor
   final List<String> languages;
   const LanguageDialog({Key? key, required this.languages}) : super(key: key);
 
@@ -71,8 +70,7 @@ class LanguageDialog extends StatelessWidget {
                             (String item) => Column(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 20, right: 20, top: 5),
+                                  padding: EdgeInsets.only(left: 20, right: 20, top: 5),
                                   child: Text(item),
                                 ),
                               ],
