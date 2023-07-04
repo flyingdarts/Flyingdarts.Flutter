@@ -23,8 +23,8 @@ class LoginPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: LoginWithFacebookButton(
-                    onPressed: () {
-                      _signInAsync();
+                    onPressed: () async {
+                      await _signInAsync();
                       cubit.setIsLoading(true);
                     },
                     child: const Flex(
@@ -51,7 +51,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  void _signInAsync() async {
+  Future<void> _signInAsync() async {
     try {
       SignInResult signInResult =
           await Amplify.Auth.signInWithWebUI(provider: AuthProvider.facebook);
