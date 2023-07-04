@@ -53,6 +53,10 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install Amplify CLI
+        run: |
+          npm i -g @aws-amplify/cli 
+
       - name: Setup flutter
         uses: subosito/flutter-action@v2
         with:
