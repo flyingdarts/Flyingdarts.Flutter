@@ -9,12 +9,13 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   group('speech_page_integration_tests', skip: true, () {
     testWidgets('scanner dialog opens and closes as expected', (tester) async {
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const MyApp(
+        isAmplifySuccessfullyConfigured: true,
+      ));
 
       final buttonFinder = find.byKey(const Key("QrCodeScannerButton"));
       final dialogFinder = find.byKey(const Key("QrCodeScannerDialog"));
-      final closeButtonFinder =
-          find.byKey(const Key("QrCodeScannerCloseDialog"));
+      final closeButtonFinder = find.byKey(const Key("QrCodeScannerCloseDialog"));
 
       // open the dialog
       await tester.tap(buttonFinder);
@@ -32,7 +33,9 @@ void main() {
     });
 
     testWidgets('language dialog opens and closes as expected', (tester) async {
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const MyApp(
+        isAmplifySuccessfullyConfigured: true,
+      ));
 
       final buttonFinder = find.byKey(const Key("SettingsButton"));
       final dialogFinder = find.byKey(const Key("LanguageDialog"));
@@ -54,7 +57,9 @@ void main() {
     });
 
     testWidgets('speech button changes state onLongPress', (tester) async {
-      await tester.pumpWidget(const MyApp());
+      await tester.pumpWidget(const MyApp(
+        isAmplifySuccessfullyConfigured: true,
+      ));
 
       // verify that the speech commmand status has correct initial text
       expect(find.text("Hold the microphone"), findsOneWidget);

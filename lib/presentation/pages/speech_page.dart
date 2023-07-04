@@ -7,6 +7,7 @@ import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_wid
 import 'package:iyltdsu_voice/utility/material.wrappers.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
+import '../../bloc/app/navigation_cubit.dart';
 import '../../bloc/camera/camera_bloc.dart';
 
 @widgetbook.UseCase(
@@ -27,20 +28,27 @@ Widget defaultSpeechPage(BuildContext context) {
   );
 }
 
-class SpeechPage extends StatelessWidget {
+class SpeechPage extends StatefulWidget with WidgetsBindingObserver {
   const SpeechPage({Key? key}) : super(key: key);
 
+  @override
+  State<SpeechPage> createState() => _SpeechPageState();
+}
+
+class _SpeechPageState extends State<SpeechPage> {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<SpeechBloc>().state;
     final languageState = context.watch<LanguageCubit>().state;
     return Scaffold(
-      appBar: const MyAppBar(),
-      body: Container(
-        alignment: Alignment.center,
-        child: SafeArea(
-          child: buildSpeechRecognitionWidget(context, state, languageState),
-        ),
+      body: Flex(
+        direction: Axis.vertical,
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: buildSpeechRecognitionWidget(context, state, languageState),
+          ),
+        ],
       ),
     );
   }
