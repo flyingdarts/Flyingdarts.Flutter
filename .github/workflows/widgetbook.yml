@@ -56,6 +56,9 @@ jobs:
       - name: Install Amplify CLI
         run: |
           npm i -g @aws-amplify/cli 
+      - name: Pull Amplify backend
+        run: |
+          amplify pull --appId ${{ secrets.AMPLIFY_APP_ID }} --envName staging
 
       - name: Setup flutter
         uses: subosito/flutter-action@v2
