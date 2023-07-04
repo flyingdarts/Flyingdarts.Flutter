@@ -65,7 +65,7 @@ jobs:
 
       - name: Pull Amplify backend
         run: |
-          amplify pull --appId ${{ secrets.AMPLIFY_APP_ID }} --envName staging --yes
+          amplify pull --yes
 
       - name: Setup flutter
         uses: subosito/flutter-action@v2
