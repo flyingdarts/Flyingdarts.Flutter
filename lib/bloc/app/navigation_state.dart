@@ -16,9 +16,14 @@ class NavigationState {
   final bool isLoading;
   final bool isLoggedIn;
 
-  NavigationState(this.selectedPage, this.pages, this.isLoading, this.isLoggedIn);
+  NavigationState(
+      this.selectedPage, this.pages, this.isLoading, this.isLoggedIn);
 
-  NavigationState copyWith({int? selectedPage, List<Widget>? pages, bool? isLoading, bool? isLoggedIn}) {
+  NavigationState copyWith(
+      {int? selectedPage,
+      List<Widget>? pages,
+      bool? isLoading,
+      bool? isLoggedIn}) {
     return NavigationState(
       selectedPage ?? this.selectedPage,
       pages ?? this.pages,
@@ -28,7 +33,7 @@ class NavigationState {
   }
 
   setLoading(bool isLoading) {
-    copyWith(isLoading: false);
+    copyWith(isLoading: isLoading);
   }
 
   factory NavigationState.defaults() {
@@ -47,31 +52,5 @@ class NavigationState {
         true,
         false);
     return navigationState;
-  }
-
-  void setupHubListener() {
-    Amplify.Hub.listen(
-      HubChannel.Auth,
-      (AuthHubEvent event) {
-        switch (event.type) {
-          case AuthHubEventType.signedIn:
-            print(isLoading);
-            safePrint('The user has signed in lol.');
-            setLoading(false);
-            print(isLoading);
-            break;
-          case AuthHubEventType.signedOut:
-            safePrint('The user has signed out lol.');
-            copyWith(isLoading: false);
-            break;
-          case AuthHubEventType.sessionExpired:
-            safePrint('The session has expired.');
-            break;
-          case AuthHubEventType.userDeleted:
-            safePrint('The user has been deleted.');
-            break;
-        }
-      },
-    );
   }
 }

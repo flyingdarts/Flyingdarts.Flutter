@@ -121,6 +121,13 @@ jobs:
           role-to-assume: ${{ secrets.AWS_GITHUB_OIDC_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Install Amplify CLI
+        run: |
+          npm i -g @aws-amplify/cli
+
+      - name: Pull Amplify backend
+        run: |
+          amplify pull --yes
       - name: Publish Widgetbook
         run: |
           aws s3 cp build/widgetbook s3://${{ secrets.WIDGETBOOK_S3_BUCKET_NAME }}/widgetbook --recursive

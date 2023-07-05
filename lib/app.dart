@@ -19,13 +19,12 @@ import 'theme.dart';
 /// App widget that wraps the flutter app.
 class SpeechApp extends StatelessWidget {
   /// Constructor
-  SpeechApp({
+  const SpeechApp({
     Key? key,
     required this.isAmplifySuccessfullyConfigured,
   }) : super(key: key);
 
   final bool isAmplifySuccessfullyConfigured;
-  late StreamSubscription<AuthHubEvent> subscription;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,9 @@ class SpeechApp extends StatelessWidget {
           path: '/',
           name: AppRoute.home.name,
           builder: (context, state) => isAmplifySuccessfullyConfigured
-              ? const MyHomePage()
+              ? cubit.state.isLoggedIn
+                  ? const MyHomePage()
+                  : const LoginPage()
               : const Scaffold(
                   body: Center(
                     child: Text(
@@ -60,7 +61,18 @@ class SpeechApp extends StatelessWidget {
         routeInformationProvider: router.routeInformationProvider,
         routerDelegate: router.routerDelegate,
         builder: (ctx, child) {
-          return _buildPage(cubit.state);
+          if (cubit.state.isLoading) {
+            return Scaffold(
+              body: Center(
+                child: LoadingAnimationWidget.staggeredDotsWave(
+                  color: Colors.white,
+                  size: 200,
+                ),
+              ),
+            );
+          } else {
+            return child!;
+          }
         },
         theme: ThemeData(
           primaryColor: MyTheme.secondaryColor,
@@ -114,22 +126,5 @@ class SpeechApp extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Widget _buildPage(NavigationState state) {
-    if (state.isLoading) {
-      return Scaffold(
-        body: Center(
-          child: LoadingAnimationWidget.staggeredDotsWave(
-            color: Colors.white,
-            size: 200,
-          ),
-        ),
-      );
-    } else if (state.isLoggedIn) {
-      return const MyHomePage();
-    } else {
-      return const LoginPage();
-    }
   }
 }

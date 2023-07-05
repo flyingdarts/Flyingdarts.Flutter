@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var pages = context.watch<NavigationCubit>().state.pages;
-    var isLoading = context.watch<NavigationCubit>().state.isLoading;
     return Scaffold(
       appBar: const MyAppBar(),
       body: PageView(

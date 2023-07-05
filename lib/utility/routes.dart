@@ -1,5 +1,1 @@
-enum AppRoute {
-  home,
-  trip,
-  edittrip,
-}
+enum AppRoute { home, login }

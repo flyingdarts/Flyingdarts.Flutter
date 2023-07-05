@@ -22,11 +22,9 @@ void main() async {
     debugPrint('Amplify configuration failed.');
   }
 
-  BlocOverrides.runZoned(
-    () => runApp(
-      MyApp(
-        isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
-      ),
+  runApp(
+    MyApp(
+      isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
     ),
   );
 }
@@ -37,17 +35,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (ctx) => NavigationCubit()..init()),
-        BlocProvider(create: (ctx) => SpeechBloc()..init()),
-        BlocProvider(create: (ctx) => LanguageCubit()..init()),
-        BlocProvider(create: (ctx) => CameraBloc()),
-      ],
-      child: SpeechApp(
-        isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
-      ),
-    );
+    try {
+      return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (ctx) => NavigationCubit()..init()),
+          BlocProvider(create: (ctx) => SpeechBloc()..init()),
+          BlocProvider(create: (ctx) => LanguageCubit()..init()),
+          BlocProvider(create: (ctx) => CameraBloc()),
+        ],
+        child: SpeechApp(
+          isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
+        ),
+      );
+    } catch (e) {
+      return Container();
+    }
   }
 }
 

@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/login_with_facebook_widget.dart';
+
+typedef SignInCallback = void Function(bool isSignedIn);
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -24,8 +28,20 @@ class LoginPage extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: LoginWithFacebookButton(
                     onPressed: () async {
-                      await _signInAsync();
                       cubit.setIsLoading(true);
+
+                      await _signInAsync(
+                        (signedIn) => {
+                          if (signedIn)
+                            {
+                              print("a yeet"),
+                            }
+                          else
+                            {
+                              print("go away"),
+                            }
+                        },
+                      );
                     },
                     child: const Flex(
                       direction: Axis.horizontal,
@@ -51,7 +67,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Future<void> _signInAsync() async {
+  Future<void> _signInAsync(SignInCallback callback) async {
     try {
       SignInResult signInResult =
           await Amplify.Auth.signInWithWebUI(provider: AuthProvider.facebook);
@@ -59,13 +75,17 @@ class LoginPage extends StatelessWidget {
       if (signInResult.isSignedIn) {
         // User is logged in, perform desired actions
         // Redirect to another screen, show a success message, etc.
+
+        log("signed in");
       } else {
+        log("not signed in");
         // Login failed, handle the error
         // Show an error message, reset the form, etc.
       }
+      callback(signInResult.isSignedIn);
     } catch (e) {
       // Handle the authentication error
-      print('Authentication error: $e');
+      log('Authentication error: $e');
     }
   }
 }

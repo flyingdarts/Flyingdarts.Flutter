@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginWithFacebookButton extends ElevatedButton {
-  LoginWithFacebookButton(
+  const LoginWithFacebookButton(
       {super.key, required super.onPressed, required super.child});
 
   @override
