@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
+import 'package:iyltdsu_voice/presentation/pages/dartboard_page.dart';
+import 'package:iyltdsu_voice/presentation/pages/keyboard_page.dart';
 import 'package:iyltdsu_voice/presentation/pages/speech_page.dart';
 
 class NavigationState {
@@ -40,7 +42,9 @@ class NavigationState {
             BlocProvider(create: (ctx) => LanguageCubit()..init()),
           ],
           child: const SpeechPage(),
-        )
+        ),
+        KeyboardPage(),
+        const DartboardPage(),
       ],
       true,
       false,
