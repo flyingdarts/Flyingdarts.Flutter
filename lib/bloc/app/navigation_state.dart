@@ -43,7 +43,7 @@ class NavigationState {
           ],
           child: const SpeechPage(),
         ),
-        const KeyboardPage(),
+        KeyboardPage(),
         const DartboardPage(),
       ],
       true,

@@ -12,14 +12,17 @@ class KeyboardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 1,
-      fit: FlexFit.tight,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(
-          input,
-          textAlign: TextAlign.center,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(2.0),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          child: Text(input,
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .primaryTextTheme
+                  .labelSmall
+                  ?.copyWith(fontSize: 14)),
         ),
       ),
     );

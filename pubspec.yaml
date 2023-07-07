@@ -17,7 +17,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.2.3+3
+version: 1.2.3+4
 
 environment:
   sdk: ">=2.18.2 <3.0.0"
@@ -61,7 +61,6 @@ dependencies:
     #   path: packages/widgetbook
 
   alchemist: ^0.6.1
-  animated_notch_bottom_bar:
   amplify_api:
   amplify_auth_cognito:
   amplify_authenticator:
@@ -71,6 +70,7 @@ dependencies:
   go_router:
   loading_animation_widget:
   flutter_svg: ^2.0.7
+  curved_navigation_bar:
 
 dev_dependencies:
   flutter_test:
