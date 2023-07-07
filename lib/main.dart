@@ -6,10 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/app.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
-import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
 import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
-import 'package:provider/provider.dart';
 import 'amplifyconfiguration.dart';
 
 void main() async {
@@ -41,7 +39,6 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (ctx) => NavigationCubit()..init()),
           BlocProvider(create: (ctx) => SpeechBloc()..init()),
           BlocProvider(create: (ctx) => LanguageCubit()..init()),
-          BlocProvider(create: (ctx) => CameraBloc()),
         ],
         child: SpeechApp(
           isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,

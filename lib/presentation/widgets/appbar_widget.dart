@@ -1,10 +1,8 @@
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
-import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
 import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/presentation/dialogs/language_dialog.dart';
-import 'package:iyltdsu_voice/presentation/dialogs/scanner_dialog.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_button_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -36,21 +34,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   List<Widget> _buildAppBarButtons(BuildContext context) {
     return <Widget>[
-      AppBarButton(
-        key: const Key("QrCodeScannerButton"),
-        iconData: Icons.qr_code_scanner_rounded,
-        onPressed: () => {
-          showDialog<void>(
-            context: context,
-            builder: (dContext) => Provider<CameraBloc>(
-              create: (_) => context.watch<CameraBloc>(),
-              builder: (context, child) {
-                return const ScannerDialog();
-              },
-            ),
-          ),
-        },
-      ),
       AppBarButton(
         key: const Key("SettingsButton"),
         iconData: Icons.settings,

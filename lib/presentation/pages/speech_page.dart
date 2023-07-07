@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
-import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
 import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.dart';
 import 'package:iyltdsu_voice/utility/material.wrappers.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
-import '../../bloc/app/navigation_cubit.dart';
-import '../../bloc/camera/camera_bloc.dart';
 
 @widgetbook.UseCase(
   name: 'The only page in the app',
@@ -21,7 +17,6 @@ Widget defaultSpeechPage(BuildContext context) {
       providers: [
         BlocProvider(create: (ctx) => SpeechBloc()..init()),
         BlocProvider(create: (ctx) => LanguageCubit()..init()),
-        BlocProvider(create: (ctx) => CameraBloc()),
       ],
       child: const SpeechPage(),
     ),

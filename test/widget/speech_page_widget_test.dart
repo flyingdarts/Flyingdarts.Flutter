@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:iyltdsu_voice/amplifyconfiguration.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
-import 'package:iyltdsu_voice/bloc/camera/camera_bloc.dart';
 import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
 import 'package:iyltdsu_voice/main.dart';
 import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
@@ -55,7 +54,6 @@ void main() async {
                         ..setIsLoggedIn(true)
                         ..setIsLoading(false)),
                   BlocProvider(create: (ctx) => SpeechBloc()..init()),
-                  BlocProvider(create: (ctx) => CameraBloc()),
                   BlocProvider(create: (ctx) => LanguageCubit()..init()),
                 ],
                 child: const MaterialApp(
@@ -80,7 +78,7 @@ void main() async {
             child: const MaterialApp(home: Material(child: MyAppBar())),
           ));
 
-          const int expectedNumberOfButtons = 3;
+          const int expectedNumberOfButtons = 2;
           final buttonFinder = find.byType(AppBarButton);
 
           expect(buttonFinder, findsNWidgets(expectedNumberOfButtons));
@@ -98,7 +96,6 @@ void main() async {
                         ..setIsLoggedIn(false)
                         ..setIsLoading(false)),
                   BlocProvider(create: (ctx) => SpeechBloc()..init()),
-                  BlocProvider(create: (ctx) => CameraBloc()),
                   BlocProvider(create: (ctx) => LanguageCubit()..init()),
                 ],
                 child: const MaterialApp(
@@ -143,7 +140,6 @@ void main() async {
                   ..setIsLoggedIn(true)
                   ..setIsLoading(false)),
             BlocProvider(create: (ctx) => SpeechBloc()..init()),
-            BlocProvider(create: (ctx) => CameraBloc()),
             BlocProvider(create: (ctx) => LanguageCubit()..init()),
           ],
           child: const MaterialApp(

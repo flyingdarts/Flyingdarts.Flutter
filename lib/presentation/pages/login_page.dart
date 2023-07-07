@@ -29,18 +29,10 @@ class LoginPage extends StatelessWidget {
                   child: LoginWithFacebookButton(
                     onPressed: () async {
                       cubit.setIsLoading(true);
-
                       await _signInAsync(
-                        (signedIn) => {
-                          if (signedIn)
-                            {
-                              print("a yeet"),
-                            }
-                          else
-                            {
-                              print("go away"),
-                            }
-                        },
+                        (signedIn) => log(
+                          signedIn.toString(),
+                        ),
                       );
                     },
                     child: const Flex(
