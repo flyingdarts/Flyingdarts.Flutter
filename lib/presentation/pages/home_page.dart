@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
 import 'package:iyltdsu_voice/theme.dart';
@@ -53,25 +54,25 @@ class _MyHomePageState extends State<MyHomePage> {
               removeMargins: false,
               bottomBarWidth: 500,
               durationInMilliSeconds: 300,
-              bottomBarItems: const [
-                BottomBarItem(
+              bottomBarItems: [
+                const BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.home_filled,
+                    Icons.mic_none,
                     color: MyTheme.primaryColor,
                   ),
                   activeItem: Icon(
-                    Icons.home_filled,
+                    Icons.mic_outlined,
                     color: Colors.white,
                   ),
                   itemLabel: 'Page 1',
                 ),
-                BottomBarItem(
+                const BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.star,
+                    Icons.dialpad,
                     color: MyTheme.primaryColor,
                   ),
                   activeItem: Icon(
-                    Icons.star,
+                    Icons.dialpad_outlined,
                     color: Colors.white,
                   ),
                   itemLabel: 'Page 2',
@@ -79,12 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 ///svg example
                 BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.info,
+                  inActiveItem: SvgPicture.asset(
+                    'assets/icons/dartboard_icon.svg',
+                    width: 40,
+                    height: 40,
                     color: MyTheme.primaryColor,
                   ),
-                  activeItem: Icon(
-                    Icons.info_outline,
+                  activeItem: SvgPicture.asset(
+                    'assets/icons/dartboard_icon.svg',
+                    width: 40,
+                    height: 40,
                     color: Colors.white,
                   ),
                   itemLabel: 'Page 3',
