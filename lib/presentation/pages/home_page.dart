@@ -68,11 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const BottomBarItem(
                   inActiveItem: Icon(
-                    Icons.dialpad,
+                    Icons.keyboard_alt_outlined,
                     color: MyTheme.primaryColor,
                   ),
                   activeItem: Icon(
-                    Icons.dialpad_outlined,
+                    Icons.keyboard_alt,
                     color: Colors.white,
                   ),
                   itemLabel: 'Page 2',
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ///svg example
                 BottomBarItem(
                   inActiveItem: SvgPicture.asset(
-                    'assets/icons/dartboard_icon.svg',
+                    'assets/icons/dartboard_icon_outlined.svg',
                     width: 40,
                     height: 40,
                     color: MyTheme.primaryColor,
