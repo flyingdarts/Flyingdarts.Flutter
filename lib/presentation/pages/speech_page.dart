@@ -35,16 +35,14 @@ class _SpeechPageState extends State<SpeechPage> {
   Widget build(BuildContext context) {
     final state = context.watch<SpeechBloc>().state;
     final languageState = context.watch<LanguageCubit>().state;
-    return Scaffold(
-      body: Flex(
-        direction: Axis.vertical,
-        children: [
-          Container(
-            alignment: Alignment.center,
-            child: buildSpeechRecognitionWidget(context, state, languageState),
-          ),
-        ],
-      ),
+    return Flex(
+      direction: Axis.vertical,
+      children: [
+        Container(
+          alignment: Alignment.center,
+          child: buildSpeechRecognitionWidget(context, state, languageState),
+        ),
+      ],
     );
   }
 }

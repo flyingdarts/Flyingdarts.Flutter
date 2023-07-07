@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         physics: const NeverScrollableScrollPhysics(),
         children: List.generate(pages.length, (index) => pages[index]),
       ),
-      extendBody: true,
+      //extendBody: true,
       bottomNavigationBar: (pages.length <= maxCount)
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
