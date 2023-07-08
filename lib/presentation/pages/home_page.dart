@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iyltdsu_voice/bloc/app/navigation_cubit.dart';
 import 'package:iyltdsu_voice/presentation/widgets/appbar_widget.dart';
 import 'package:iyltdsu_voice/theme.dart';
+import 'package:iyltdsu_voice/websocket/websocket_service.dart';
 import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -18,6 +19,26 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
+  WebSocketService<MessageRequest> _webSocketService =
+      WebSocketService<MessageRequest>();
+  List<WebSocketMessage<MessageRequest>> _receivedMessages = [];
+  @override
+  void initState() {
+    super.initState();
+    _webSocketService.messages
+        .listen((WebSocketMessage<MessageRequest> message) {
+      log(message.message?.Message ?? message.toString());
+      setState(() {
+        _receivedMessages.add(message);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _webSocketService.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

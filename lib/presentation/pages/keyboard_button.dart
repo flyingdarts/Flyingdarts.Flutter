@@ -17,12 +17,14 @@ class KeyboardButton extends StatelessWidget {
         padding: const EdgeInsets.all(2.0),
         child: ElevatedButton(
           onPressed: onPressed,
-          child: Text(input,
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .primaryTextTheme
-                  .labelSmall
-                  ?.copyWith(fontSize: 14)),
+          child: Text(
+            input,
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .primaryTextTheme
+                .labelSmall
+                ?.copyWith(fontSize: 12, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
