@@ -1,9 +1,9 @@
+import 'dart:collection';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class DartboardPage extends StatelessWidget {
-  final GlobalKey webViewKey = GlobalKey();
-
   InAppWebViewController? webViewController;
   InAppWebViewOptions settings = InAppWebViewOptions();
 
@@ -11,27 +11,17 @@ class DartboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Flex(
-          direction: Axis.vertical,
-          children: [
-            Flexible(
-              flex: 1,
-              child: InAppWebView(
-                key: webViewKey,
-                initialFile: "assets/dartboard.html",
-                onWebViewCreated: (controller) async {
-                  webViewController = controller;
-                },
-                onConsoleMessage: (controller, consoleMessage) {
-                  print(consoleMessage);
-                },
-              ),
-            ),
-          ],
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: InAppWebView(
+        initialFile: "assets/dartboard.html",
+        onWebViewCreated: (controller) async {
+          webViewController = controller;
+        },
+        onConsoleMessage: (controller, consoleMessage) {
+          print(consoleMessage);
+        },
+      ),
     );
   }
 }
