@@ -15,10 +15,12 @@ class DartboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Expanded(
-          child: Stack(
-            children: [
-              InAppWebView(
+        Flex(
+          direction: Axis.vertical,
+          children: [
+            Flexible(
+              flex: 1,
+              child: InAppWebView(
                 key: webViewKey,
                 initialFile: "assets/dartboard.html",
                 onWebViewCreated: (controller) async {
@@ -28,8 +30,8 @@ class DartboardPage extends StatelessWidget {
                   print(consoleMessage);
                 },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );
