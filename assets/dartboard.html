@@ -225,7 +225,11 @@
             return item;
         }
 
-        document.addEventListener("DOMContentLoaded", init);
+        window.onload = function () {
+            // Code to be executed when the page is fully loaded
+            init();
+        };
+
     </script>
 
 </body>
