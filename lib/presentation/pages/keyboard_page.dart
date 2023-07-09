@@ -32,6 +32,7 @@ class KeyboardPage extends StatelessWidget {
                       onPressed: () => {
                         keyboardCubit.clear(),
                       },
+                      disabled: keyboardCubit.state.shouldDisableFunctions,
                     ),
                     Flexible(
                       child: Column(
@@ -64,6 +65,7 @@ class KeyboardPage extends StatelessWidget {
                       onPressed: () => {
                         keyboardCubit.check(),
                       },
+                      disabled: keyboardCubit.state.shouldDisableFunctions,
                     ),
                   ],
                 ),
@@ -87,18 +89,21 @@ class KeyboardPage extends StatelessWidget {
                     onPressed: () => {
                       keyboardCubit.noScore(),
                     },
+                    disabled: keyboardCubit.state.shouldDisableFunctions,
                   ),
                   KeyboardButton(
                     input: "0",
                     onPressed: () => {
                       keyboardCubit.setDigit(0),
                     },
+                    disabled: keyboardCubit.state.shouldDisableNumpad,
                   ),
                   KeyboardButton(
                     input: "OK",
                     onPressed: () => {
                       keyboardCubit.ok(),
                     },
+                    disabled: keyboardCubit.state.shouldDisableFunctions,
                   ),
                 ],
               ),
@@ -134,6 +139,9 @@ class KeyboardPage extends StatelessWidget {
             onPressed: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].contains(key)
                 ? cubit.setDigit(key)
                 : cubit.setShortcut(key),
+            disabled: [1, 2, 3, 4, 5, 6, 7, 8, 9].contains(key)
+                ? cubit.state.shouldDisableNumpad
+                : cubit.state.shouldDisableShortcuts,
           ),
         );
       }
@@ -145,22 +153,5 @@ class KeyboardPage extends StatelessWidget {
       );
     }
     return Column(children: rows);
-  }
-
-  Widget _buildTop(List<String> keys) {
-    return GridView.count(
-      crossAxisCount: 3,
-      childAspectRatio: 1.2,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      children: keys
-          .map(
-            (e) => KeyboardButton(
-              input: e,
-              onPressed: () => debugPrint(e),
-            ),
-          )
-          .toList(),
-    );
   }
 }
