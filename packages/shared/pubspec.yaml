@@ -24,10 +24,6 @@ dependencies:
     # git:
     #   url: https://github.com/mikepattyn/widgetbook.git
     #   path: packages/widgetbook
-  provider:
-  speech_to_text:
-  flutter_bloc:
-  amplify_flutter:
   
 dev_depdencies:
   widgetbook_generator:

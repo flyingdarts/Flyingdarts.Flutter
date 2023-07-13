@@ -425,11 +425,12 @@ packages:
   speech_to_text:
     dependency: transitive
     description:
-      name: speech_to_text
-      sha256: "59393a58815a517dc1237a81ccbaf8302f44d107d84fafca9c295cdf7fff404f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.3.0"
+      path: speech_to_text
+      ref: HEAD
+      resolved-ref: d66b789c4b1e95580e0d234ef3dfd3089f4f909e
+      url: "https://github.com/flyingdarts/speech_to_text.git"
+    source: git
+    version: "6.1.0"
   speech_to_text_macos:
     dependency: transitive
     description:

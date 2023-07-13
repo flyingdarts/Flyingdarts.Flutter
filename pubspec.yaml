@@ -120,7 +120,6 @@ flutter:
   assets:
     - assets/icons/dartboard_icon.svg
     - assets/icons/dartboard_icon_outlined.svg
-    - assets/dartboard.html
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -149,7 +148,7 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
           weight: 400
-        - asset: fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
           weight: 700
