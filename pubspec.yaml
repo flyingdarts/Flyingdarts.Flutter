@@ -31,6 +31,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flyingdarts_shared:
+    path: ./packages/shared
+  flyingdarts_domain: 
+    path: ./packages/domain
+  flyingdarts_core:
+    path: ./packages/core
+  flyingdarts_features:
+    path: ./packages/features
+
   logger:
 
   # The following adds the Cupertino Icons font to your application.

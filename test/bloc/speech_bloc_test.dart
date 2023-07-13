@@ -1,8 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
-import 'package:iyltdsu_voice/bloc/language/language_cubit.dart';
-import 'package:iyltdsu_voice/bloc/language/language_state.dart';
-import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
+import 'package:flyingdarts_features/speech/state/speech_bloc.dart';
 import 'package:test/test.dart';
 
 void main() {

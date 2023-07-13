@@ -1,9 +1,9 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
-import 'package:iyltdsu_voice/bloc/language/language_state.dart';
-import 'package:iyltdsu_voice/bloc/speech/speech_bloc.dart';
-import 'package:iyltdsu_voice/presentation/widgets/speech/speech_recognition_widget.dart';
-import 'package:iyltdsu_voice/utility/material.wrappers.dart';
+import 'package:flyingdarts_features/language/state/language_state.dart';
+import 'package:flyingdarts_features/speech/state/speech_bloc.dart';
+import 'package:flyingdarts_features/speech/widgets/speech_recognition_widget.dart';
+import 'package:flyingdarts_shared/wrappers/material.wrappers.dart';
 
 void main() {
   goldenTest(
