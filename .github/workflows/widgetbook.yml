@@ -108,12 +108,6 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Run build_runner
-        run: flutter pub run build_runner build
-
-      - name: Build Widgetbook
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook
       
       - name: Run build_runner
         working-directory: packages/features
@@ -135,7 +129,13 @@ jobs:
 
       - name: Build Shared Widgetbook
         run: flutter build web -t packages/shared/lib/widgetbook.generator.dart -o build/widgetbook
+      
+      - name: Run build_runner
+        run: flutter pub run build_runner build
 
+      - name: Build Widgetbook
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
