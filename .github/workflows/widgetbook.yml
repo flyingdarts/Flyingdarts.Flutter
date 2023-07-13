@@ -77,9 +77,68 @@ jobs:
 
   #     - name: Run Widget tests
   #       run: flutter test test/widget/speech_page_widget_test.dart
-
-  publish:
+  build-features-book:
     needs: [run-unittests]
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
+    permissions:
+      id-token: write
+      contents: read
+    steps:      
+      - name: Install dependencies
+        working-directory: packages/features
+        run: flutter pub get
+      
+      - name: Run build_runner
+        working-directory: packages/features
+        run: flutter pub run build_runner build
+
+      - name: Build Features Widgetbook
+        working-directory: packages/features
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook     
+
+  build-shared-book:
+    needs: [run-unittests]
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
+    permissions:
+      id-token: write
+      contents: read
+    steps:      
+      - name: Install dependencies
+        working-directory: packages/shared
+        run: flutter pub get
+      
+      - name: Run build_runner
+        working-directory: packages/shared
+        run: flutter pub run build_runner build
+
+      - name: Build Features Widgetbook
+        working-directory: packages/shared
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook          
+
+  build-core-book:
+    needs: [run-unittests]
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
+    permissions:
+      id-token: write
+      contents: read
+    steps:      
+      - name: Install dependencies
+        working-directory: packages/core
+        run: flutter pub get
+      
+      - name: Run build_runner
+        working-directory: packages/core
+        run: flutter pub run build_runner build
+
+      - name: Build Features Widgetbook
+        working-directory: packages/core
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook       
+ 
+  publish-widgetbook:
+    needs: [build-core-book, build-shared-book, build-features-book]
     runs-on: ubuntu-22.04
     if: "!contains(github.event.head_commit.message, 'NORUN')" # Skip the build by adding NORUN in all caps to your commit message
     permissions:
@@ -103,33 +162,30 @@ jobs:
         with:
           flutter-version: "3.10.5"
 
-      - name: Run flutter doctor
-        run: flutter doctor
-
-      - name: Install dependencies
-        run: flutter pub get
-      
-      - name: Run build_runner
-        working-directory: packages/features
-        run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        run: flutter build web -t packages/features/lib/widgetbook.generator.dart -o build/widgetbook        
-      
       - name: Run build_runner
         working-directory: packages/core
         run: flutter pub run build_runner build
 
-      - name: Build Core Widgetbook
-        run: flutter build web -t packages/core/lib/widgetbook.generator.dart -o build/widgetbook        
-      
+      - name: Build Features Widgetbook
+        working-directory: packages/core
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook   
+
+      - name: Run build_runner
+        working-directory: packages/core
+        run: flutter pub run build_runner build
+
+      - name: Build Features Widgetbook
+        working-directory: packages/core
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook  
+            
       - name: Run build_runner
         working-directory: packages/shared
         run: flutter pub run build_runner build
 
-      - name: Build Shared Widgetbook
-        run: flutter build web -t packages/shared/lib/widgetbook.generator.dart -o build/widgetbook
-      
+      - name: Build Features Widgetbook
+        working-directory: packages/shared
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook   
+        
       - name: Run build_runner
         run: flutter pub run build_runner build
 
