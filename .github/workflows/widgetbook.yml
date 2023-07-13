@@ -112,6 +112,12 @@ jobs:
       - name: Run build_runner
         run: flutter pub run build_runner build
 
+      - name: Build Features Widgetbook
+        run: flutter build web -t packages/features/lib/widgetbook.generator.dart -o build/widgetbook        
+      - name: Build Core Widgetbook
+        run: flutter build web -t packages/core/lib/widgetbook.generator.dart -o build/widgetbook        
+      - name: Build Shared Widgetbook
+        run: flutter build web -t packages/shared/lib/widgetbook.generator.dart -o build/widgetbook
       - name: Build Widgetbook
         run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook
 
