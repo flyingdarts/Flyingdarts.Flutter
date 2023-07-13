@@ -139,19 +139,18 @@ jobs:
           flutter-version: "3.10.5"
 
       - name: Install dependencies
-        working-directory: packages/core
         run: flutter pub get
-        
-      - name: Run build_runner
-        working-directory: packages/core
+
+      - name: Run build_runner features
+        working-directory: packages/features
         run: flutter pub run build_runner build
 
-      - name: Run build_runner
-        working-directory: packages/core
+      - name: Run build_runner shared
+        working-directory: packages/shared
         run: flutter pub run build_runner build
             
-      - name: Run build_runner
-        working-directory: packages/shared
+      - name: Run build_runner core
+        working-directory: packages/core
         run: flutter pub run build_runner build 
 
       - name: Run build_runner
