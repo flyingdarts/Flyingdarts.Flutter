@@ -32,7 +32,7 @@ jobs:
         run: flutter pub get
 
       - name: Run State tests
-        run: flutter test test/bloc/speech_bloc_test.dart
+        run: flutter test test/old/bloc/speech_bloc_test.dart
 
   # run-widgettests:
   #   runs-on: ubuntu-22.04
