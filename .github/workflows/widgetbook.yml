@@ -112,14 +112,29 @@ jobs:
       - name: Run build_runner
         run: flutter pub run build_runner build
 
-      - name: Build Features Widgetbook
-        run: flutter build web -t packages/features/lib/widgetbook.generator.dart -o build/widgetbook        
-      - name: Build Core Widgetbook
-        run: flutter build web -t packages/core/lib/widgetbook.generator.dart -o build/widgetbook        
-      - name: Build Shared Widgetbook
-        run: flutter build web -t packages/shared/lib/widgetbook.generator.dart -o build/widgetbook
       - name: Build Widgetbook
         run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook
+      
+      - name: Run build_runner
+        working-directory: packages/features
+        run: flutter pub run build_runner build
+
+      - name: Build Features Widgetbook
+        run: flutter build web -t packages/features/lib/widgetbook.generator.dart -o build/widgetbook        
+      
+      - name: Run build_runner
+        working-directory: packages/core
+        run: flutter pub run build_runner build
+
+      - name: Build Core Widgetbook
+        run: flutter build web -t packages/core/lib/widgetbook.generator.dart -o build/widgetbook        
+      
+      - name: Run build_runner
+        working-directory: packages/shared
+        run: flutter pub run build_runner build
+
+      - name: Build Shared Widgetbook
+        run: flutter build web -t packages/shared/lib/widgetbook.generator.dart -o build/widgetbook
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
