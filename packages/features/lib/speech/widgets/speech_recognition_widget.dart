@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flyingdarts_shared/keys.dart';
 import 'package:flyingdarts_shared/themes/theme.dart';
 
 import '../../language/state/language_state.dart';
@@ -71,6 +72,7 @@ class SpeechRecognitionWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SpeechCommandGestureDetector(
+              key: Keys.speechRecognitionBtn.key,
               onLongPress: () => {
                 context.read<SpeechBloc>().add(const SpeechButtonLongPressed()),
               },

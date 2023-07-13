@@ -1,21 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flyingdarts_shared/themes/theme.dart';
-import 'package:flyingdarts_shared/wrappers/material.wrappers.dart';
 
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
+import '../../keys.dart';
 import 'error_dialog.dart';
-
-@widgetbook.UseCase(
-  name: 'A language error dialog',
-  type: LanguageErrorDialog,
-)
-Widget defaultLanguageErrorDialog(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    const LanguageErrorDialog(error: "Could not find that language"),
-  );
-}
 
 class LanguageErrorDialog extends ErrorDialog<String> {
   const LanguageErrorDialog({
@@ -26,13 +13,15 @@ class LanguageErrorDialog extends ErrorDialog<String> {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
+      key: Keys.errorDialogLanguage.key,
       backgroundColor: MyTheme.primaryColor,
       contentPadding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 32.0),
       titlePadding: const EdgeInsets.all(24.0),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
+          Text(
+            key: Keys.errorDialogLanguageTitle.key,
             'Oops, something went wrong',
             textAlign: TextAlign.center,
           ),
@@ -60,6 +49,7 @@ class LanguageErrorDialog extends ErrorDialog<String> {
         Padding(
           padding: const EdgeInsets.all(24),
           child: Text(
+            key: Keys.errorDialogLanguageError.key,
             error,
             style: const TextStyle(color: Colors.white),
             textAlign: TextAlign.center,

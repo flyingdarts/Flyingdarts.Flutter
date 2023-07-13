@@ -22,4 +22,6 @@ dependencies:
   amplify_flutter:
 
 dev_dependencies:
-  
+  build_runner:
+  widgetbook_generator:
+    path: ./../../dependencies/widgetbook/packages/widgetbook_generator

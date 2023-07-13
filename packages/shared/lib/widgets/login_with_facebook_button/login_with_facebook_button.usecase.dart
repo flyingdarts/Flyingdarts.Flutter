@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flyingdarts_shared/wrappers/material.wrappers.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-import 'keyboard_button.dart';
+import 'login_with_facebook_button.dart';
 
 @widgetbook.UseCase(
-  name: 'The button used for the keyboard',
-  type: KeyboardButton,
+  name: 'Login with facebook button',
+  type: LoginWithFacebookButton,
 )
-Widget defaultKeyboardButton(BuildContext context) {
+Widget defaultLoginWithFacebookBtn(BuildContext context) {
   return createDefaultWidgetInACard(
     context,
-    KeyboardButton(
-      disabled: false,
-      input: '',
-      onPressed: () => {},
+    LoginWithFacebookButton(
+      onPressed: () {
+        debugPrint('logging in');
+      },
     ),
   );
 }

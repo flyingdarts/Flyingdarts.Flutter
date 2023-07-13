@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flyingdarts_core/navigation/navigation_cubit.dart';
 import 'package:flyingdarts_core/widgets/appbar/appbar_widget.dart';
-import 'package:flyingdarts_shared/login_with_facebook_widget.dart';
+import 'package:flyingdarts_shared/widgets/login_with_facebook_button/login_with_facebook_button.dart';
 
 typedef SignInCallback = void Function(bool isSignedIn);
 
@@ -27,7 +27,6 @@ class LoginPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: LoginWithFacebookButton(
-                    key: const Key("SIGN_IN_WITH_FACEBOOK"),
                     onPressed: () async {
                       cubit.setIsLoading(true);
                       await _signInAsync(
@@ -36,20 +35,6 @@ class LoginPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Flex(
-                      direction: Axis.horizontal,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(right: 20),
-                          child: Icon(
-                            Icons.facebook,
-                            size: 28,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text("Login with facebook")
-                      ],
-                    ),
                   ),
                 ),
               )
@@ -65,14 +50,9 @@ class LoginPage extends StatelessWidget {
       SignInResult signInResult = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.facebook);
 
       if (signInResult.isSignedIn) {
-        // User is logged in, perform desired actions
-        // Redirect to another screen, show a success message, etc.
-
         log("signed in");
       } else {
         log("not signed in");
-        // Login failed, handle the error
-        // Show an error message, reset the form, etc.
       }
       callback(signInResult.isSignedIn);
     } catch (e) {

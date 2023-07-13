@@ -25,13 +25,10 @@ dependencies:
     #   url: https://github.com/mikepattyn/widgetbook.git
     #   path: packages/widgetbook
   
-dev_depdencies:
+dev_dependencies:
+  build_runner:
   widgetbook_generator:
     path: ./../../dependencies/widgetbook/packages/widgetbook_generator
-    # git:
-    #   url: https://github.com/mikepattyn/widgetbook.git
-    #   path: packages/widgetbook_generator
-
 flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
