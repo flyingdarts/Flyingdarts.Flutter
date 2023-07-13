@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'package:flyingdarts_features/widgetbook.generator.directories.g.dart' as featuresBook;
+import 'package:flyingdarts_core/widgetbook.generator.directories.g.dart' as coreBook;
+import 'package:flyingdarts_shared/widgetbook.generator.directories.g.dart' as sharedBook;
+
 import 'widgetbook.generator.directories.g.dart';
 
 void main() {
@@ -20,7 +23,12 @@ class WidgetbookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Widgetbook.material(
       // Use the generated directories variable
-      directories: [...directories, ...featuresBook.directories],
+      directories: [
+        ...directories,
+        ...featuresBook.directories,
+        ...coreBook.directories,
+        ...sharedBook.directories,
+      ],
       addons: [
         TextScaleAddon(
           scales: [1.0, 2.0],
@@ -29,14 +37,10 @@ class WidgetbookApp extends StatelessWidget {
           devices: [
             Devices.ios.iPhoneSE,
             Devices.ios.iPhone13,
-            Devices.ios.iPad,
             Devices.ios.iPad12InchesGen4,
-            Devices.android.smallTablet,
             Devices.android.mediumTablet,
-            Devices.android.largeTablet,
             Devices.android.smallPhone,
             Devices.android.onePlus8Pro,
-            Devices.android.samsungGalaxyS20,
           ],
         ),
         HomeScreenAddon(isConfigured: true)
