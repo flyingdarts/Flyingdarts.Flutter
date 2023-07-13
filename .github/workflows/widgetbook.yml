@@ -113,7 +113,7 @@ jobs:
         run: flutter pub run build_runner build
 
       - name: Build Widgetbook
-        run: flutter build web -t lib/main.generator.dart -o build/widgetbook
+        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
