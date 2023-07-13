@@ -555,6 +555,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_gherkin:
+    dependency: "direct dev"
+    description:
+      name: flutter_gherkin
+      sha256: bacda3ef810e116bd66582d59ba58457e51e64977df0c1821e1a4f689bdf0186
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter_inappwebview:
     dependency: "direct main"
     description:
@@ -651,8 +659,16 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  gherkin:
+    dependency: "direct dev"
+    description:
+      name: gherkin
+      sha256: "7c835be5c28dc50f753caa30b4d8e2204d0617dc56fc019dca0fc70279d779b7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.8"
   glob:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: glob
       sha256: "0e7014b3b7d4dac1ca4d6114f82bf1782ee86745b9b42a92c9289c23d8a0ab63"

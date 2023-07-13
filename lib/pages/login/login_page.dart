@@ -27,6 +27,7 @@ class LoginPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: LoginWithFacebookButton(
+                    key: const Key("SIGN_IN_WITH_FACEBOOK"),
                     onPressed: () async {
                       cubit.setIsLoading(true);
                       await _signInAsync(
