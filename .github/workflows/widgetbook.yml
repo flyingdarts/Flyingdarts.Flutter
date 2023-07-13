@@ -33,7 +33,7 @@ jobs:
 
       - name: Run State tests
         run: flutter test test/old/bloc/speech_bloc_test.dart
-        
+
   build-features-book:
     needs: [run-unittests]
     runs-on: ubuntu-22.04
@@ -60,11 +60,7 @@ jobs:
       
       - name: Run build_runner
         working-directory: packages/features
-        run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/features
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook     
+        run: flutter pub run build_runner build 
 
   build-shared-book:
     needs: [run-unittests]
@@ -92,11 +88,7 @@ jobs:
       
       - name: Run build_runner
         working-directory: packages/shared
-        run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/shared
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook          
+        run: flutter pub run build_runner build   
 
   build-core-book:
     needs: [run-unittests]
@@ -125,10 +117,6 @@ jobs:
       - name: Run build_runner
         working-directory: packages/core
         run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/core
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook       
  
   publish-widgetbook:
     needs: [build-core-book, build-shared-book, build-features-book]
@@ -153,26 +141,14 @@ jobs:
       - name: Run build_runner
         working-directory: packages/core
         run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/core
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook   
-
+        
       - name: Run build_runner
         working-directory: packages/core
         run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/core
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook  
             
       - name: Run build_runner
         working-directory: packages/shared
-        run: flutter pub run build_runner build
-
-      - name: Build Features Widgetbook
-        working-directory: packages/shared
-        run: flutter build web -t lib/widgetbook.generator.dart -o build/widgetbook   
+        run: flutter pub run build_runner build 
 
       - name: Run build_runner
         run: flutter pub run build_runner build
