@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flyingdarts_shared/themes/theme.dart';
-import 'package:flyingdarts_shared/wrappers/material.wrappers.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
-@widgetbook.UseCase(
-  name: 'A language dialog',
-  type: LanguageDialog,
-)
-Widget defaultLanguageDialog(BuildContext context) {
-  return createDefaultMaterialWidget(
-    context,
-    const LanguageDialog(
-      languages: ["English"],
-    ),
-  );
-}
 
 class LanguageDialog extends StatelessWidget {
   final List<String> languages;
