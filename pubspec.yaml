@@ -40,7 +40,8 @@ dependencies:
     path: ./packages/core
   flyingdarts_features:
     path: ./packages/features
-
+  flyingdarts_internationalization:
+    path: ./packages/internationalization
   logger:
 
   # The following adds the Cupertino Icons font to your application.
@@ -71,12 +72,14 @@ dependencies:
     #   path: packages/widgetbook
 
   alchemist: ^0.6.1
+
   amplify_api:
   amplify_auth_cognito:
   amplify_authenticator:
   amplify_datastore:
   amplify_flutter:
   amplify_storage_s3:
+  
   go_router:
   loading_animation_widget:
   flutter_svg: ^2.0.7
@@ -87,6 +90,10 @@ dependencies:
   rxdart:
   flutter_inappwebview:
   glob:
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  melos: ^3.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -118,7 +125,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/dartboard_icon.svg
