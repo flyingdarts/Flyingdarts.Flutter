@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flyingdarts_features/keyboard/keyboard.dart';
-import 'package:flyingdarts_features/keyboard/pages/keyboard_page.usecase.dart';
-import 'package:flyingdarts_features/keyboard/state/keyboard_cubit.dart';
-import 'package:flyingdarts_features/language/state/language_state.dart';
-import 'package:flyingdarts_features/speech/state/speech_bloc.dart';
-import 'package:flyingdarts_features/speech/widgets/speech_recognition_widget.dart';
-import 'package:flyingdarts_shared/wrappers/material.wrappers.dart';
+import 'package:keyboard/keyboard.dart';
+import 'package:language/language.dart';
+import 'package:speech/speech.dart';
+import 'package:ui/ui.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(
@@ -81,7 +78,7 @@ class WidgetbookHomescreen extends StatelessWidget {
                     providers: [
                       BlocProvider(create: (ctx) => KeyboardCubit()),
                     ],
-                    child: KeyboardPage(),
+                    child: const KeyboardPage(),
                   ),
                 ),
               ),
@@ -97,7 +94,7 @@ class WidgetbookHomescreen extends StatelessWidget {
                     providers: [
                       BlocProvider(create: (ctx) => KeyboardCubit()..setDigit(5)),
                     ],
-                    child: KeyboardPage(),
+                    child: const KeyboardPage(),
                   ),
                 ),
               ),
@@ -113,7 +110,7 @@ class WidgetbookHomescreen extends StatelessWidget {
                     providers: [
                       BlocProvider(create: (ctx) => KeyboardCubit()..setShortcut(45)),
                     ],
-                    child: KeyboardPage(),
+                    child: const KeyboardPage(),
                   ),
                 ),
               ),

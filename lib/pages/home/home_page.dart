@@ -5,13 +5,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flyingdarts_core/navigation/navigation_cubit.dart';
-import 'package:flyingdarts_core/websocket/websocket_message.dart';
-import 'package:flyingdarts_core/websocket/websocket_request.dart';
-import 'package:flyingdarts_core/websocket/websocket_service.dart';
-import 'package:flyingdarts_core/widgets/appbar/appbar_widget.dart';
-import 'package:flyingdarts_shared/themes/theme.dart';
+import 'package:get_it/get_it.dart';
+import 'package:navigation/navigation.dart';
+import 'package:websocket/websocket.dart';
+import 'package:appbar/appbar.dart';
+import 'package:ui/ui.dart';
 import 'package:provider/provider.dart';
+
+var getIt = GetIt.I;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     if (!kIsWeb) {
-      _webSocketService = WebSocketService<MessageRequest>();
+      _webSocketService = getIt<WebSocketService<MessageRequest>>();
       _webSocketService.messages.listen((WebSocketMessage<MessageRequest> message) {
         log(message.message?.Message ?? message.toString());
         setState(() {

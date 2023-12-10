@@ -13,10 +13,10 @@ packages:
     dependency: "direct main"
     description:
       name: alchemist
-      sha256: "3b0b75fe77fcc022fe68c090571c2aff556c07779528653ffb9ecef450ad0c6e"
+      sha256: "2efa90870003e10bf01af52329f2ddf9ccc44cd519adb2c8aea1713db2e84760"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.1"
+    version: "0.7.0"
   amplify_analytics_pinpoint:
     dependency: transitive
     description:
@@ -169,6 +169,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.2+1"
+  appbar:
+    dependency: "direct main"
+    description:
+      path: "packages/features/appbar"
+      relative: true
+    source: path
+    version: "0.0.1"
   args:
     dependency: transitive
     description:
@@ -489,6 +496,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  dartboard:
+    dependency: "direct main"
+    description:
+      path: "packages/features/dartboard"
+      relative: true
+    source: path
+    version: "0.0.1"
   dbus:
     dependency: transitive
     description:
@@ -529,6 +543,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.1"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      sha256: "7d328c4d898a61efc3cd93655a0955858e29a0aa647f0f9e02d59b3bb275e2e8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.6"
   drift:
     dependency: transitive
     description:
@@ -615,10 +637,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
+      sha256: e2a421b7e59244faef694ba7b30562e489c2b489866e505074eb005cd7060db7
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.3"
+    version: "3.0.1"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -632,6 +654,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.17"
+  flutter_secure_storage:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage
+      sha256: ffdbb60130e4665d2af814a0267c481bcf522c41ae2e43caf69fa0146876d685
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.0.0"
+  flutter_secure_storage_linux:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage_linux
+      sha256: "3d5032e314774ee0e1a7d0a9f5e2793486f0dff2dd9ef5a23f4e3fb2a0ae6a9e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
+  flutter_secure_storage_macos:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage_macos
+      sha256: bd33935b4b628abd0b86c8ca20655c5b36275c3a3f5194769a7b3f37c905369c
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
+  flutter_secure_storage_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage_platform_interface
+      sha256: "0d4d3a5dd4db28c96ae414d7ba3b8422fd735a8255642774803b2532c9a61d7e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
+  flutter_secure_storage_web:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage_web
+      sha256: "30f84f102df9dcdaa2241866a958c2ec976902ebdaa8883fbfe525f1f2f3cf20"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.2"
+  flutter_secure_storage_windows:
+    dependency: transitive
+    description:
+      name: flutter_secure_storage_windows
+      sha256: "5809c66f9dd3b4b93b0a6e2e8561539405322ee767ac2f64d084e2ab5429d108"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -650,41 +720,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flyingdarts_core:
+  flyingdarts:
     dependency: "direct main"
     description:
-      path: "packages/core"
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  flyingdarts_domain:
-    dependency: "direct main"
-    description:
-      path: "packages/domain"
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  flyingdarts_features:
-    dependency: "direct main"
-    description:
-      path: "packages/features"
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  flyingdarts_internationalization:
-    dependency: "direct main"
-    description:
-      path: "packages/internationalization"
+      path: "packages/flyingdarts"
       relative: true
     source: path
     version: "0.0.1"
-  flyingdarts_shared:
-    dependency: "direct main"
-    description:
-      path: "packages/shared"
-      relative: true
-    source: path
-    version: "1.0.0+1"
   freezed_annotation:
     dependency: transitive
     description:
@@ -706,6 +748,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: f79870884de16d689cf9a7d15eedf31ed61d750e813c538a6efb92660fea83c3
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.6.4"
   gherkin:
     dependency: "direct dev"
     description:
@@ -770,11 +820,34 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  injectable:
+    dependency: "direct main"
+    description:
+      name: injectable
+      sha256: cd3c422e13270c81f64ab73c80406b2b2ed563fe59d0ff2093eb7eee63d0bbeb
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
+  injectable_generator:
+    dependency: "direct dev"
+    description:
+      name: injectable_generator
+      sha256: f9d3c05f0938403f79ad6c6d23ec8e37a7a05ad980b1bf9399493f3e41845788
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   integration_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  internationalization:
+    dependency: "direct main"
+    description:
+      path: "packages/shared/internationalization"
+      relative: true
+    source: path
+    version: "0.0.1"
   intl:
     dependency: "direct main"
     description:
@@ -807,14 +880,28 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.1"
+  keyboard:
+    dependency: "direct main"
+    description:
+      path: "packages/features/keyboard"
+      relative: true
+    source: path
+    version: "0.0.1"
+  language:
+    dependency: "direct main"
+    description:
+      path: "packages/features/language"
+      relative: true
+    source: path
+    version: "0.0.1"
   lints:
     dependency: transitive
     description:
       name: lints
-      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
+      sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "3.0.0"
   loading_animation_widget:
     dependency: "direct main"
     description:
@@ -911,6 +998,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  navigation:
+    dependency: "direct main"
+    description:
+      path: "packages/features/navigation"
+      relative: true
+    source: path
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:
@@ -1087,6 +1181,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  profile:
+    dependency: "direct main"
+    description:
+      path: "packages/features/profile"
+      relative: true
+    source: path
+    version: "0.0.1"
   prompts:
     dependency: transitive
     description:
@@ -1159,6 +1260,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   resizable_widget:
     dependency: transitive
     description:
@@ -1183,6 +1292,62 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.27.7"
+  shared_preferences:
+    dependency: transitive
+    description:
+      name: shared_preferences
+      sha256: "81429e4481e1ccfb51ede496e916348668fd0921627779233bd24cc3ff6abd02"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
+  shared_preferences_android:
+    dependency: transitive
+    description:
+      name: shared_preferences_android
+      sha256: "8568a389334b6e83415b6aae55378e158fbc2314e074983362d20c562780fb06"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.1"
+  shared_preferences_foundation:
+    dependency: transitive
+    description:
+      name: shared_preferences_foundation
+      sha256: "7bf53a9f2d007329ee6f3df7268fd498f8373602f943c975598bbb34649b62a7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.4"
+  shared_preferences_linux:
+    dependency: transitive
+    description:
+      name: shared_preferences_linux
+      sha256: "9f2cbcf46d4270ea8be39fa156d86379077c8a5228d9dfdb1164ae0bb93f1faa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
+  shared_preferences_platform_interface:
+    dependency: transitive
+    description:
+      name: shared_preferences_platform_interface
+      sha256: d4ec5fc9ebb2f2e056c617112aa75dcf92fc2e4faaf2ae999caa297473f75d8a
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.1"
+  shared_preferences_web:
+    dependency: transitive
+    description:
+      name: shared_preferences_web
+      sha256: "7b15ffb9387ea3e237bb7a66b8a23d2147663d391cafc5c8f37b2e7b4bde5d21"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
+  shared_preferences_windows:
+    dependency: transitive
+    description:
+      name: shared_preferences_windows
+      sha256: "841ad54f3c8381c480d0c9b508b89a34036f512482c407e6df7a9c4aa2ef8f59"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
   shelf:
     dependency: transitive
     description:
@@ -1268,6 +1433,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  speech:
+    dependency: "direct main"
+    description:
+      path: "packages/features/speech"
+      relative: true
+    source: path
+    version: "0.0.1"
   speech_to_text:
     dependency: "direct main"
     description:
@@ -1405,6 +1577,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+  ui:
+    dependency: "direct main"
+    description:
+      path: "packages/shared/ui"
+      relative: true
+    source: path
+    version: "0.0.1"
   uri:
     dependency: transitive
     description:
@@ -1565,6 +1744,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
+  websocket:
+    dependency: "direct main"
+    description:
+      path: "packages/shared/websocket"
+      relative: true
+    source: path
+    version: "0.0.1"
   webview_flutter:
     dependency: "direct main"
     description:
@@ -1675,5 +1861,5 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
+  dart: ">=3.2.3 <4.0.0"
   flutter: ">=3.16.0"

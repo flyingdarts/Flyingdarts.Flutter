@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: language,ui
+dependency_overrides:
+  language:
+    path: ../language
+  ui:
+    path: ../../shared/ui

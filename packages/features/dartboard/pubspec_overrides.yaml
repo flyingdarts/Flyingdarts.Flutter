@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: internationalization,ui
+dependency_overrides:
+  internationalization:
+    path: ../../shared/internationalization
+  ui:
+    path: ../../shared/ui

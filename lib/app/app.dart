@@ -2,13 +2,13 @@ import 'package:amplify_authenticator/amplify_authenticator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flyingdarts_core/navigation/navigation_cubit.dart';
-import 'package:flyingdarts_shared/themes/theme.dart';
+import 'package:navigation/navigation.dart';
+import 'package:internationalization/internationalization.dart';
+import 'package:ui/ui.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 
 import 'routes/app_router.dart';
-import 'package:flyingdarts_internationalization/internationalization.dart';
 
 /// App widget that wraps the flutter app.
 class App extends StatelessWidget {

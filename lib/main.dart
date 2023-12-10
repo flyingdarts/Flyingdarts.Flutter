@@ -4,14 +4,16 @@ import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flyingdarts_core/navigation/navigation_cubit.dart';
-import 'package:flyingdarts_features/keyboard/state/keyboard_cubit.dart';
-import 'package:flyingdarts_features/language/state/language_cubit.dart';
-import 'package:flyingdarts_features/speech/state/speech_bloc.dart';
+import 'package:iyltdsu_voice/flavor_config.dart';
+import 'package:keyboard/keyboard.dart';
+import 'package:language/language.dart';
+import 'package:navigation/navigation.dart';
+import 'package:speech/speech.dart';
 import 'amplifyconfiguration.dart';
 import 'app/app.dart';
+import 'di.dart';
 
-void main() async {
+Future<Widget> initializeApp(FlavorConfig flavorConfig) async {
   WidgetsFlutterBinding.ensureInitialized();
   bool isAmplifySuccessfullyConfigured = false;
   try {
@@ -21,10 +23,10 @@ void main() async {
     debugPrint('Amplify configuration failed.');
   }
 
-  runApp(
-    MyApp(
-      isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
-    ),
+  await setupDependencies(flavorConfig.flavor);
+
+  return MyApp(
+    isAmplifySuccessfullyConfigured: isAmplifySuccessfullyConfigured,
   );
 }
 
