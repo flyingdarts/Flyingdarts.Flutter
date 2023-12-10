@@ -393,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "DEV PROV";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -653,10 +653,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter;
+				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "DEV PROV";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Flyingdarts Flutter Beta ios_app_store 1702198206";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -741,7 +741,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "Beta prov";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "DEV PROV";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -905,11 +905,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter;
+				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "Beta prov";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Flyingdarts Flutter Beta ios_app_store 1702198206";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -990,7 +990,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "DEV PROV";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1149,10 +1149,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter;
+				PRODUCT_BUNDLE_IDENTIFIER = net.flyingdarts.flutter.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Flyingdarts Flutter Beta ios_app_store 1702198206";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1324,7 +1324,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=*]" = "Beta prov";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Beta prov";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "DEV PROV";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
