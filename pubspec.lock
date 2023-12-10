@@ -17,6 +17,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  amplify:
+    dependency: "direct overridden"
+    description:
+      path: "packages/shared/amplify"
+      relative: true
+    source: path
+    version: "0.0.1"
   amplify_analytics_pinpoint:
     dependency: transitive
     description:
@@ -1861,5 +1868,5 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=3.2.3 <4.0.0"
+  dart: ">=3.2.0 <4.0.0"
   flutter: ">=3.16.0"

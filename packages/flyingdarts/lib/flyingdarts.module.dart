@@ -59,7 +59,7 @@ class FlyingdartsPackageModule extends _i1.MicroPackageModule {
         _prod,
       },
     );
-    gh.factory<_i4.WebSocketService<_i4.MessageRequest>>(
+    gh.factory<_i4.WebSocketService>(
       () => backendConfigurationModule
           .webSocketService(gh<_i3.WebSocketConfig>()),
       registerFor: {

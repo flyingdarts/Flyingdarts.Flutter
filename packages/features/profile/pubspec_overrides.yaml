@@ -1,4 +1,14 @@
-# melos_managed_dependency_overrides: ui
+# melos_managed_dependency_overrides: ui,amplify,websocket,widgetbook,widgetbook_annotation,widgetbook_generator
 dependency_overrides:
+  amplify:
+    path: ../../shared/amplify
   ui:
     path: ../../shared/ui
+  websocket:
+    path: ../../shared/websocket
+  widgetbook:
+    path: ../../../dependencies/widgetbook/packages/widgetbook
+  widgetbook_annotation:
+    path: ../../../dependencies/widgetbook/packages/widgetbook_annotation
+  widgetbook_generator:
+    path: ../../../dependencies/widgetbook/packages/widgetbook_generator

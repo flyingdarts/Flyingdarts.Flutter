@@ -1,8 +1,6 @@
-library profile;
+library amplify;
 
-export 'package:profile/src/dialog/profile_dialog.dart';
-export 'package:profile/src/state/profile_cubit.dart';
-export 'package:profile/src/state/profile_state.dart';
+export 'src/amplify_service.dart';
 
 import 'package:injectable/injectable.dart';
 

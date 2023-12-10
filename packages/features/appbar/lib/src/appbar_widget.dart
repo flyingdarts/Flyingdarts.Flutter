@@ -2,6 +2,7 @@ import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:language/language.dart';
 import 'package:navigation/navigation.dart';
+import 'package:profile/profile.dart';
 import 'package:provider/provider.dart';
 import 'button/appbar_button_widget.dart';
 
@@ -51,9 +52,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => {
           showDialog<void>(
             context: context,
-            builder: (dContext) => LanguageDialog(
-              languages: context.read<LanguageCubit>().state.availableLanguages,
-            ),
+            builder: (dContext) => const ProfileDialog(),
           )
         },
       ),

@@ -5,6 +5,7 @@ packages:
   - dependencies/**/*
   - packages/flyingdarts
   - packages/features/**/*
+  - packages/features/*
   - packages/shared/**/*
   - packages/shared/*
   - ./

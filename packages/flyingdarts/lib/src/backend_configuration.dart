@@ -31,7 +31,7 @@ abstract class BackendConfigurationModule {
   @acc
   @prod
   @injectable
-  WebSocketService<MessageRequest> webSocketService(WebSocketConfig config) {
-    return WebSocketService<MessageRequest>(config.webSocketUri);
+  WebSocketService webSocketService(WebSocketConfig config) {
+    return WebSocketService(config.webSocketUri)..initialize();
   }
 }

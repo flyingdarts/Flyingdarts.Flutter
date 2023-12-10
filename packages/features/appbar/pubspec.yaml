@@ -15,7 +15,10 @@ dependencies:
 
   ui: 
     path: ./../../shared/ui
-  
+    
+  profile:
+    path: ./../profile
+
   language:
     path: ./../language
   

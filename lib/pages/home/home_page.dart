@@ -23,14 +23,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  late WebSocketService<MessageRequest> _webSocketService;
-  final List<WebSocketMessage<MessageRequest>> _receivedMessages = [];
+  late WebSocketService _webSocketService;
+  final List<WebSocketMessage> _receivedMessages = [];
   @override
   void initState() {
     super.initState();
     if (!kIsWeb) {
-      _webSocketService = getIt<WebSocketService<MessageRequest>>();
-      _webSocketService.messages.listen((WebSocketMessage<MessageRequest> message) {
+      _webSocketService = getIt<WebSocketService>();
+      _webSocketService.messages.listen((WebSocketMessage message) {
         log(message.message?.Message ?? message.toString());
         setState(() {
           _receivedMessages.add(message);

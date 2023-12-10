@@ -8,6 +8,7 @@ import 'package:iyltdsu_voice/flavor_config.dart';
 import 'package:keyboard/keyboard.dart';
 import 'package:language/language.dart';
 import 'package:navigation/navigation.dart';
+import 'package:profile/profile.dart';
 import 'package:speech/speech.dart';
 import 'amplifyconfiguration.dart';
 import 'app/app.dart';
