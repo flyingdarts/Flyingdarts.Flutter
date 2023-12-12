@@ -19,7 +19,10 @@ dependencies:
 
   websocket:
     path: ./../shared/websocket
-
+  configuration:
+    path: ./../shared/configuration/core
+  configuration_preferences:
+    path: ./../shared/configuration/preferences
 dev_dependencies:
   flutter_test:
     sdk: flutter

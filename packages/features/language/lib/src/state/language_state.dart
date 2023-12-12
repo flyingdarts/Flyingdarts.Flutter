@@ -1,15 +1,17 @@
-class LanguageState {
-  final String currentLanguage;
-  final List<String> availableLanguages;
+import 'package:speech_to_text/speech_to_text.dart';
 
-  LanguageState(this.currentLanguage, this.availableLanguages);
+class LanguageState {
+  final LocaleName preferedLocale;
+  final List<LocaleName> availableLanguages;
+
+  LanguageState(this.preferedLocale, this.availableLanguages);
 
   LanguageState copyWith({
-    String? currentLanguage,
-    List<String>? availableLanguages,
+    LocaleName? preferedLocale,
+    List<LocaleName>? availableLanguages,
   }) {
     return LanguageState(
-      currentLanguage ?? this.currentLanguage,
+      preferedLocale ?? this.preferedLocale,
       availableLanguages ?? this.availableLanguages,
     );
   }

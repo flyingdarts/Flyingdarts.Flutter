@@ -145,6 +145,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  configuration:
+    dependency: "direct main"
+    description:
+      path: "../shared/configuration/core"
+      relative: true
+    source: path
+    version: "0.0.1"
+  configuration_preferences:
+    dependency: "direct main"
+    description:
+      path: "../shared/configuration/preferences"
+      relative: true
+    source: path
+    version: "0.0.1"
   convert:
     dependency: transitive
     description:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 import 'package:ui/ui.dart';
 
 import '../state/language_cubit.dart';
@@ -9,7 +10,8 @@ class LanguageDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var languages = GetIt.I<LanguageCubit>().state.availableLanguages;
+    var cubit = GetIt.I<LanguageCubit>();
+    var languages = cubit.state.availableLanguages;
 
     return SimpleDialog(
       key: const Key("LanguageDialog"),
@@ -54,11 +56,15 @@ class LanguageDialog extends StatelessWidget {
                     children: [
                       ...languages
                           .map(
-                            (String item) => Column(
+                            (LocaleName item) => Column(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(left: 20, right: 20, top: 5),
-                                  child: Text(item),
+                                  padding: EdgeInsets.only(left: 20, right: 20, top: 0),
+                                  child: MaterialButton(
+                                      onPressed: () {
+                                        cubit.setPreferedLocale(item);
+                                      },
+                                      child: Text(item.name)),
                                 ),
                               ],
                             ),

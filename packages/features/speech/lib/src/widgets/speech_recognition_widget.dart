@@ -56,7 +56,7 @@ class SpeechRecognitionWidget extends StatelessWidget {
               ),
             ),
             Text(
-              languageState.currentLanguage,
+              languageState.preferedLocale.name,
               style: const TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 14,

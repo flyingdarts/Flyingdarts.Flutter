@@ -20,6 +20,10 @@ dependencies:
       path: speech_to_text
   ui:
     path: ./../../shared/ui
+  configuration:
+    path: ./../../shared/configuration/core
+  configuration_preferences:
+    path: ./../../shared/configuration/preferences
     
   widgetbook:
     path: ./../../../dependencies/widgetbook/packages/widgetbook

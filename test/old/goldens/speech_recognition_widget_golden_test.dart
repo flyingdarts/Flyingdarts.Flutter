@@ -2,6 +2,7 @@ import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
 import 'package:language/language.dart';
 import 'package:speech/speech.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 import 'package:ui/ui.dart';
 
 void main() {
@@ -23,7 +24,7 @@ void main() {
                 lastEntry: '',
               ),
               languageState: LanguageState(
-                'Nederlands (Verenigde Staten)',
+                LocaleName('nl-US', 'Nederlands (Verenigde Staten)'),
                 [],
               ),
             ),
@@ -40,7 +41,7 @@ void main() {
                 lastEntry: '',
               ),
               languageState: LanguageState(
-                'Nederlands (Verenigde Staten)',
+                LocaleName('nl-US', 'Nederlands (Verenigde Staten)'),
                 [],
               ),
             ),
@@ -57,7 +58,7 @@ void main() {
                 lastEntry: '',
               ),
               languageState: LanguageState(
-                'Nederlands (Verenigde Staten)',
+                LocaleName('nl-US', 'Nederlands (Verenigde Staten)'),
                 [],
               ),
             ),
@@ -74,7 +75,7 @@ void main() {
                 lastEntry: '',
               ),
               languageState: LanguageState(
-                'Nederlands (Verenigde Staten)',
+                LocaleName('nl-US', 'Nederlands (Verenigde Staten)'),
                 [],
               ),
             ),
