@@ -1302,7 +1302,7 @@ packages:
     source: path
     version: "0.0.1"
   speech_to_text:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       path: speech_to_text
       ref: HEAD

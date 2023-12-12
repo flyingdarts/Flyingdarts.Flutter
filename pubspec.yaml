@@ -58,7 +58,10 @@ dependencies:
   melos: ^3.2.0
   get_it: ^7.6.4
   injectable: ^2.3.0
-
+  speech_to_text: 
+    git:
+      url: https://github.com/flyingdarts/speech_to_text.git
+      path: speech_to_text
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -72,10 +75,6 @@ dev_dependencies:
   glob: ^2.1.2
   flutter_inappwebview: ^5.8.0
   intl: any
-  speech_to_text: 
-    git:
-      url: https://github.com/flyingdarts/speech_to_text.git
-      path: speech_to_text
   equatable: ^2.0.5
   injectable_generator: ^2.3.0
   flutter_lints: ^3.0.1
