@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 import 'language_state.dart';
 
+@lazySingleton
 class LanguageCubit extends Cubit<LanguageState> {
   LanguageCubit() : super(LanguageState('', []));
 

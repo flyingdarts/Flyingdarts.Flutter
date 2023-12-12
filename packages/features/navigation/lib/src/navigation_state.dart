@@ -2,6 +2,7 @@ import 'package:dartboard/dartboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get_it/get_it.dart';
 import 'package:keyboard/keyboard.dart';
 import 'package:language/language.dart';
 import 'package:speech/speech.dart';
@@ -34,7 +35,7 @@ class NavigationState {
         MultiBlocProvider(
           providers: [
             BlocProvider(create: (ctx) => SpeechBloc()..init()),
-            BlocProvider(create: (ctx) => LanguageCubit()..init()),
+            BlocProvider(create: (ctx) => GetIt.I<LanguageCubit>()),
           ],
           child: const SpeechPage(),
         ),

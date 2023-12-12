@@ -7,7 +7,6 @@ import 'package:injectable/injectable.dart';
 import 'package:websocket/websocket.dart';
 
 import '../models/get_user_profile_query.dart';
-import '../models/get_user_profile_response.dart';
 import 'profile_state.dart';
 
 @lazySingleton

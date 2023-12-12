@@ -21,6 +21,9 @@ dependencies:
   ui:
     path: ./../../shared/ui
 
+  internationalization:
+    path: ./../../shared/internationalization
+    
   websocket:
     path: ./../../shared/websocket
 

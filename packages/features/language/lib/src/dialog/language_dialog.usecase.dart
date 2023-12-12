@@ -11,8 +11,6 @@ import 'language_dialog.dart';
 Widget defaultLanguageDialog(BuildContext context) {
   return createDefaultWidgetInACard(
     context,
-    const LanguageDialog(
-      languages: ["English"],
-    ),
+    const LanguageDialog(),
   );
 }

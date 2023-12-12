@@ -29,6 +29,7 @@ mixin MyTheme {
 }
 
 var myTheme = ThemeData(
+  useMaterial3: false,
   primaryColor: MyTheme.secondaryColor,
   scaffoldBackgroundColor: MyTheme.primaryColor,
   primaryColorDark: const Color(0xff3C46A7),

@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   amplify_flutter: ^1.6.1
-
-  dartboard:
+  get_it: 
+  dartboard: 
     path: ./../dartboard
     
   keyboard:

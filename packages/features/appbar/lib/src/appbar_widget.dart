@@ -40,9 +40,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => {
           showDialog<void>(
             context: context,
-            builder: (dContext) => LanguageDialog(
-              languages: context.read<LanguageCubit>().state.availableLanguages,
-            ),
+            builder: (dContext) => LanguageDialog(),
           )
         },
       ),

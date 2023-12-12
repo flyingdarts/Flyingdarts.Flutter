@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:ui/ui.dart';
 
+import '../state/language_cubit.dart';
+
 class LanguageDialog extends StatelessWidget {
-  final List<String> languages;
-  const LanguageDialog({Key? key, required this.languages}) : super(key: key);
+  const LanguageDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var languages = GetIt.I<LanguageCubit>().state.availableLanguages;
+
     return SimpleDialog(
       key: const Key("LanguageDialog"),
       backgroundColor: MyTheme.primaryColor,

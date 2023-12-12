@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flyingdarts_app/flavor_config.dart';
 import 'package:keyboard/keyboard.dart';
-import 'package:language/language.dart';
 import 'package:navigation/navigation.dart';
 import 'package:speech/speech.dart';
 import 'amplifyconfiguration.dart';
@@ -41,7 +40,6 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (ctx) => NavigationCubit()..init()),
           BlocProvider(create: (ctx) => SpeechBloc()..init()),
-          BlocProvider(create: (ctx) => LanguageCubit()..init()),
           BlocProvider(create: (ctx) => KeyboardCubit()),
         ],
         child: const App(),
