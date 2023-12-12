@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:iyltdsu_voice/main.dart';
+import 'package:flyingdarts_app/main.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:speech/speech.dart';
 

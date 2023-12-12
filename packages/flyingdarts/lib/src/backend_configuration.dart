@@ -1,9 +1,9 @@
-import 'package:flyingdarts/flyingdarts.dart';
-import 'package:flyingdarts/src/flavor.dart';
-import 'package:flyingdarts/src/web_socket_config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:websocket/websocket.dart';
+
+import 'flavor.dart';
+import 'web_socket_config.dart';
 
 const rootWebSocketUri = Named("root_websocket_uri");
 
