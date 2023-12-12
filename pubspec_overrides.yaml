@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: flyingdarts,internationalization,ui,websocket,widgetbook,widgetbook_annotation,widgetbook_generator,amplify,appbar,dartboard,keyboard,language,navigation,profile,speech
+# melos_managed_dependency_overrides: amplify,appbar,dartboard,flyingdarts,internationalization,keyboard,language,navigation,profile,speech,ui,websocket,widgetbook,widgetbook_annotation,widgetbook_generator
 dependency_overrides:
   amplify:
     path: packages/shared/amplify

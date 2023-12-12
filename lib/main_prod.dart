@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Flyingdarts/flavor_config.dart';
+import 'package:flyingdarts_app/flavor_config.dart';
 
 import 'main.dart';
 

@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: dartboard,internationalization,keyboard,language,navigation,speech,ui,amplify,profile,websocket,widgetbook,widgetbook_annotation,widgetbook_generator
+# melos_managed_dependency_overrides: amplify,dartboard,internationalization,keyboard,language,navigation,profile,speech,ui,websocket,widgetbook,widgetbook_annotation,widgetbook_generator
 dependency_overrides:
   amplify:
     path: ../../shared/amplify
