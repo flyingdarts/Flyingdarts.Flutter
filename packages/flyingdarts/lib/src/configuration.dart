@@ -11,6 +11,7 @@ abstract class ConfigurationModule {
   @preResolve
   Future<WriteableConfiguration<LanguageConfig>> languageConfig(SharedPreferences sharedPreferences) async {
     final config = PreferencesConfiguration<LanguageConfig>(sharedPreferences, LanguageConfig.fromJson);
+    config.setDefault(LanguageConfig(preferedLocaleId: 'nl-US'));
     await config.load();
     return config;
   }
