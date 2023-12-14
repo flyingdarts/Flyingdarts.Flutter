@@ -63,6 +63,7 @@ class LanguageDialog extends StatelessWidget {
                                   child: MaterialButton(
                                       onPressed: () {
                                         cubit.setPreferedLocale(item);
+                                        Navigator.pop(context);
                                       },
                                       child: Text(item.name)),
                                 ),
