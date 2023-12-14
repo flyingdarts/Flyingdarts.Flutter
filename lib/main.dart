@@ -52,7 +52,12 @@ class MyApp extends StatelessWidget {
 
 Future<void> _configureAmplify() async {
   await Amplify.addPlugins([
-    AmplifyAuthCognito(),
+    AmplifyAuthCognito(
+        secureStorageFactory: AmplifySecureStorage.factoryFrom(
+      webOptions: WebSecureStorageOptions(
+        persistenceOption: WebPersistenceOption.inMemory,
+      ),
+    )),
   ]);
   await Amplify.configure(amplifyconfig);
 }
