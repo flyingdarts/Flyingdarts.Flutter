@@ -27,11 +27,9 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>net.flyingdarts.flutter.beta</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>flyingdartscontrol://</string>
+				<string>flyingdartscontrol</string>
 			</array>
 		</dict>
 	</array>
