@@ -1,14 +1,14 @@
 {
-  "staging": {
+  "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify0e5b517b56684-staging-165927-authRole",
-      "UnauthRoleArn": "arn:aws:iam::561462764262:role/amplify-amplify0e5b517b56684-staging-165927-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::561462764262:role/amplify-amplify0e5b517b56684-staging-165927-authRole",
+      "AuthRoleName": "amplify-flyingdartsmobile-main-224234-authRole",
+      "UnauthRoleArn": "arn:aws:iam::561462764262:role/amplify-flyingdartsmobile-main-224234-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::561462764262:role/amplify-flyingdartsmobile-main-224234-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-amplify0e5b517b56684-staging-165927-deployment",
-      "UnauthRoleName": "amplify-amplify0e5b517b56684-staging-165927-unauthRole",
-      "StackName": "amplify-amplify0e5b517b56684-staging-165927",
-      "StackId": "arn:aws:cloudformation:eu-west-1:561462764262:stack/amplify-amplify0e5b517b56684-staging-165927/d5a2bb90-8633-11ee-8294-02a917fd0055",
+      "DeploymentBucketName": "amplify-flyingdartsmobile-main-224234-deployment",
+      "UnauthRoleName": "amplify-flyingdartsmobile-main-224234-unauthRole",
+      "StackName": "amplify-flyingdartsmobile-main-224234",
+      "StackId": "arn:aws:cloudformation:eu-west-1:561462764262:stack/amplify-flyingdartsmobile-main-224234/56fad7e0-ac13-11ee-9f44-06a1ed19a24d",
       "AmplifyAppId": "d2n67kzf0xo4x7"
     },
     "categories": {
@@ -19,7 +19,7 @@
           "authRoleName": "amplify-flyingdarts-production-24329-authRole",
           "identityPoolId": "eu-west-1:e2168b52-d7c1-452b-bc05-0e4d06bcba71",
           "identityPoolName": "testAuthIdentityPool__production",
-          "nativeClientId": "7duge0a35ki8fvq8ip8v4miop6",
+          "nativeClientId": "5o6ggsr9l3241i8035l793ru4b",
           "unauthRoleArn": "arn:aws:iam::561462764262:role/amplify-flyingdarts-production-24329-unauthRole",
           "unauthRoleName": "amplify-flyingdarts-production-24329-unauthRole",
           "userPoolId": "eu-west-1_gInTJENXg",

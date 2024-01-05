@@ -20,7 +20,7 @@ const amplifyconfig = '''{
                 "CognitoUserPool": {
                     "Default": {
                         "PoolId": "eu-west-1_gInTJENXg",
-                        "AppClientId": "7duge0a35ki8fvq8ip8v4miop6",
+                        "AppClientId": "5o6ggsr9l3241i8035l793ru4b",
                         "Region": "eu-west-1"
                     }
                 },
@@ -28,7 +28,7 @@ const amplifyconfig = '''{
                     "Default": {
                         "OAuth": {
                             "WebDomain": "nabzwdf7t9ey-production.auth.eu-west-1.amazoncognito.com",
-                            "AppClientId": "7duge0a35ki8fvq8ip8v4miop6",
+                            "AppClientId": "5o6ggsr9l3241i8035l793ru4b",
                             "SignInRedirectURI": "flyingdartscontrol://login,https://flyingdarts.net/login",
                             "SignOutRedirectURI": "flyingdartscontrol://logout,https://flyingdarts.net/logout",
                             "Scopes": [
@@ -41,7 +41,7 @@ const amplifyconfig = '''{
                         },
                         "authenticationFlowType": "USER_SRP_AUTH",
                         "socialProviders": [
-                            "FACEBOOK"
+                            "GOOGLE"
                         ],
                         "usernameAttributes": [
                             "EMAIL"
